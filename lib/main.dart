@@ -74,8 +74,33 @@ class HomePage extends StatelessWidget {
               ],
             ),
 
-            // Area krem di bawah gambar (opsional, biar kalau di-scroll tetap krem)
-            Container(height: 200, color: kremColor),
+            // --- JARAK ANTARA BANNER DAN STORY ---
+            const SizedBox(
+              height: 25,
+            ), // Lo bisa ganti angkanya kalau kurang jauh
+            // --- TAMBAHAN FOTO STORY DI SINI ---
+            Image.asset(
+              'assets/images/story-full.png', // Pastikan nama file ini ada di folder assets
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // --- FOTO TOURISM & HERITAGE ---
+            Image.asset(
+              'assets/images/tourism-heritage.png', // <-- Sesuaikan nama file foto Songket lo
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // 4. FOTO GEOGRAPHIC & CULINER (FOTO TERAKHIR)
+            Image.asset(
+              'assets/images/geo-culiner.png', // <-- Pastikan nama file sesuai di folder assets
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // JARAK PENUTUP (Sesuai request: sisa ruang tidak kebanyakan)
+            const SizedBox(height: 30),
           ],
         ),
       ),
