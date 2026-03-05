@@ -1,23 +1,89 @@
 import 'package:flutter/material.dart';
+import '../culture_page.dart';
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
 
   const CustomLayout({super.key, required this.body});
 
+  // Fungsi helper buat pindah halaman
+  void _navigateTo(BuildContext context, Widget page) {
+    Navigator.pop(context); // Tutup drawer dulu
+    Navigator.push(context, MaterialPageRoute(builder: (context) => page));
+  }
+
   @override
   Widget build(BuildContext context) {
-    // Gunakan warna krem yang sama dengan background logo di screenshot
     const Color themeColor = Color(0xFFF8F0E5);
     const Color navyColor = Color(0xFF012B47);
 
     return Scaffold(
-      backgroundColor: themeColor, // Background dasar krem
+      backgroundColor: themeColor,
+
+      // --- DRAWER (MENU NAVIGASI) ---
+      drawer: Drawer(
+        child: Container(
+          color: themeColor,
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              // HEADER DRAWER CUSTOM (Posisi & Ukuran bisa diatur manual)
+              Container(
+                width: double.infinity,
+                height: 220, // <--- Atur tinggi area navy di sini
+                decoration: const BoxDecoration(color: navyColor),
+                child: Align(
+                  /// Alignment(x, y)
+                  /// x: 0.0 (tengah), -1.0 (kiri), 1.0 (kanan)
+                  /// y: 0.0 (tengah), -1.0 (atas banget), 1.0 (bawah banget)
+                  /// Ubah angka 0.2 di bawah untuk naik-turunkan foto
+                  alignment: const Alignment(0.0, 0.2), 
+                  child: SizedBox(
+                    width: 192, // <--- Atur lebar foto manual
+                    height: 192, // <--- Atur tinggi foto manual
+                    child: Image.asset(
+                      'assets/images/logo-teks-putih.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 10), // Jarak tipis antara header dan menu
+
+              // MENU HOME
+              ListTile(
+                leading: const Icon(Icons.home, color: navyColor),
+                title: const Text(
+                  'Home',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.pop(context); // Tutup drawer
+                  Navigator.of(context).popUntil((route) => route.isFirst);
+                },
+              ),
+
+              // MENU CULTURE
+              ListTile(
+                leading: const Icon(Icons.museum, color: navyColor),
+                title: const Text(
+                  'Culture',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const CulturePage());
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+
+      // --- APPBAR CUSTOM ---
       appBar: PreferredSize(
-        // Tinggi header disesuaikan supaya pas sama area krem di gambar lo
         preferredSize: const Size.fromHeight(80),
         child: SafeArea(
-          // Kita kasih Container warna krem biar headernya solid
           child: Container(
             color: themeColor,
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -26,7 +92,6 @@ class CustomLayout extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // LOGO KIRI
-                // Posisi logo dibuat pas di tengah secara vertikal
                 SizedBox(
                   height: 50,
                   child: Image.asset(
@@ -34,21 +99,25 @@ class CustomLayout extends StatelessWidget {
                     fit: BoxFit.contain,
                   ),
                 ),
+
                 // MENU HAMBURGER KANAN
-                IconButton(
-                  padding: EdgeInsets.zero,
-                  constraints: const BoxConstraints(),
-                  icon: const Icon(Icons.menu, color: navyColor, size: 35),
-                  onPressed: () {
-                    // Tambahin fungsi menu di sini nanti
-                  },
+                Builder(
+                  builder: (context) => IconButton(
+                    padding: EdgeInsets.zero,
+                    constraints: const BoxConstraints(),
+                    icon: const Icon(Icons.menu, color: navyColor, size: 35),
+                    onPressed: () {
+                      Scaffold.of(context).openDrawer();
+                    },
+                  ),
                 ),
               ],
             ),
           ),
         ),
       ),
-      // Body bakal nampilin gambar welcome-screen.png lo tepat di bawah header ini
+
+      // --- BODY HALAMAN ---
       body: body,
     );
   }

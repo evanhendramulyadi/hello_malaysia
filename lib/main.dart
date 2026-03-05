@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_layout.dart';
+import 'culture_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,46 +28,49 @@ class HomePage extends StatelessWidget {
 
     return CustomLayout(
       body: SingleChildScrollView(
-        // Biar aman kalau layar HP pendek
         child: Column(
           children: [
-            // STACK SEKARANG MENGIKUTI TINGGI GAMBAR
+            // 1. BANNER UTAMA DENGAN TOMBOL
             Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                // 1. GAMBAR (Patokan Tinggi)
                 Image.asset(
                   'assets/images/welcome-screen.png',
                   width: double.infinity,
-                  fit: BoxFit
-                      .fitWidth, // Gambar memenuhi lebar, tinggi otomatis menyesuaikan rasio
+                  fit: BoxFit.fitWidth,
                 ),
-
-                // 2. TOMBOL-TOMBOL (Sekarang patokannya bawah GAMBAR, bukan bawah LAYAR)
                 Positioned(
-                  bottom:
-                      20, // Jarak tombol dari bawah gambar (sesuaikan biar pas)
+                  bottom: 22,
                   left: 0,
                   right: 0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // TOMBOL EXPLORE TOURISM
                       _buildButton(
+                        context: context,
                         label: 'Explore Tourism',
                         icon: Icons.explore_outlined,
                         bgColor: navyColor,
                         textColor: kremColor,
+                        onPressed: () {
+                          debugPrint("Explore Tourism Clicked");
+                        },
                       ),
-
-                      const SizedBox(width: 15), // Jarak antar tombol
-                      // TOMBOL DISCOVER CULTURE
+                      const SizedBox(width: 15),
                       _buildButton(
+                        context: context,
                         label: 'Discover Culture',
                         icon: Icons.museum_outlined,
                         bgColor: Colors.transparent,
                         textColor: kremColor,
                         isOutlined: true,
+                        onPressed: () {
+                          // NAVIGASI KE CULTURE PAGE
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const CulturePage()),
+                          );
+                        },
                       ),
                     ],
                   ),
@@ -74,49 +78,72 @@ class HomePage extends StatelessWidget {
               ],
             ),
 
-            // --- JARAK ANTARA BANNER DAN STORY ---
-            const SizedBox(
-              height: 25,
-            ), // Lo bisa ganti angkanya kalau kurang jauh
-            // --- TAMBAHAN FOTO STORY DI SINI ---
+            const SizedBox(height: 25),
+
+            // 2. FOTO STORY FULL
             Image.asset(
-              'assets/images/story-full.png', // Pastikan nama file ini ada di folder assets
+              'assets/images/story-full.png',
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
 
-            // --- FOTO TOURISM & HERITAGE ---
+            // 3. FOTO TOURISM & HERITAGE
             Image.asset(
-              'assets/images/tourism-heritage.png', // <-- Sesuaikan nama file foto Songket lo
+              'assets/images/tourism-heritage.png',
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
 
-            // 4. FOTO GEOGRAPHIC & CULINER (FOTO TERAKHIR)
-            Image.asset(
-              'assets/images/geo-culiner.png', // <-- Pastikan nama file sesuai di folder assets
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
+            const SizedBox(height: 25),
+
+            // 4. FOTO GEOGRAPHIC & CULINER DENGAN TEKS NAVIGASI
+            Stack(
+              children: [
+                Image.asset(
+                  'assets/images/geo-culiner.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+                
+                Positioned(
+                  bottom: 615,
+                  right: 45,
+                  child: GestureDetector(
+                    onTap: () {
+                      debugPrint("Navigasi ke halaman Geographic!");
+                    },
+                    child: const Text(
+                      "know more about geographic",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
 
-            // JARAK PENUTUP (Sesuai request: sisa ruang tidak kebanyakan)
-            const SizedBox(height: 30),
+            const SizedBox(height: 30), 
           ],
         ),
       ),
     );
   }
 
-  // Fungsi Helper biar kode lo nggak berantakan kebanyakan copy-paste
+  // Fungsi Helper Tombol yang sudah diperbaiki
   Widget _buildButton({
+    required BuildContext context,
     required String label,
     required IconData icon,
     required Color bgColor,
     required Color textColor,
+    required VoidCallback onPressed, // Tambahkan ini
     bool isOutlined = false,
   }) {
     return SizedBox(
-      width: 135, // Sesuaikan lebar agar pas di layar
+      width: 135,
       height: 38,
       child: ElevatedButton.icon(
         style: ElevatedButton.styleFrom(
@@ -131,9 +158,7 @@ class HomePage extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 5),
         ),
-        onPressed: () {
-          debugPrint("$label clicked");
-        },
+        onPressed: onPressed, // Gunakan parameter onPressed
         icon: Icon(icon, size: 18),
         label: Text(
           label,

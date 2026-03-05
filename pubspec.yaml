@@ -67,6 +67,8 @@ flutter:
     - assets/images/story-full.png
     - assets/images/tourism-heritage.png
     - assets/images/geo-culiner.png
+    - assets/images/logo-teks-putih.png
+    - assets/images/culture.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
