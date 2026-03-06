@@ -71,6 +71,14 @@ flutter:
     - assets/images/culture.png
     - assets/images/tapestry-cultures.png
     - assets/images/traditional-religious.png
+    - assets/images/inspiring-figures.png
+    - assets/images/story-about-us.png
+    - assets/images/nation-diversity.png
+    - assets/images/natural-geography.png
+    - assets/images/landforms-1.png
+    - assets/images/landforms-2.png
+    - assets/images/territorial-boundaries.png
+    - assets/images/geographical-location.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

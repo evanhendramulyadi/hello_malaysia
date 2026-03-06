@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../culture_page.dart';
+import '../geography.dart'; // Import halaman baru
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
@@ -75,6 +76,18 @@ class CustomLayout extends StatelessWidget {
                   _navigateTo(context, const CulturePage());
                 },
               ),
+
+              // MENU GEOGRAPHY
+              ListTile(
+                leading: const Icon(Icons.public, color: navyColor),
+                title: const Text(
+                  'Geography',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const GeographyPage());
+                },
+              ),
             ],
           ),
         ),
@@ -93,7 +106,7 @@ class CustomLayout extends StatelessWidget {
               children: [
                 // LOGO KIRI
                 SizedBox(
-                  height: 50,
+                  height: 60,
                   child: Image.asset(
                     'assets/images/logo-tanpa-teks.png',
                     fit: BoxFit.contain,

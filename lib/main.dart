@@ -65,7 +65,6 @@ class HomePage extends StatelessWidget {
                         textColor: kremColor,
                         isOutlined: true,
                         onPressed: () {
-                          // NAVIGASI KE CULTURE PAGE
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => const CulturePage()),
@@ -96,35 +95,37 @@ class HomePage extends StatelessWidget {
 
             const SizedBox(height: 25),
 
-            // 4. FOTO GEOGRAPHIC & CULINER DENGAN TEKS NAVIGASI
-            Stack(
-              children: [
-                Image.asset(
-                  'assets/images/geo-culiner.png',
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                ),
-                
-                Positioned(
-                  bottom: 615,
-                  right: 45,
-                  child: GestureDetector(
-                    onTap: () {
-                      debugPrint("Navigasi ke halaman Geographic!");
-                    },
-                    child: const Text(
-                      "know more about geographic",
-                      style: TextStyle(
-                        color: Colors.red,
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+            // 4. FOTO GEOGRAPHIC & CULINER (Teks merah dihapus)
+            Image.asset(
+              'assets/images/geo-culiner.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
             ),
 
+            const SizedBox(height: 25),
+
+            // 5. INSPIRING FIGURES
+            Image.asset(
+              'assets/images/inspiring-figures.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // 6. NATION DIVERSITY
+            Image.asset(
+              'assets/images/nation-diversity.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // 7. STORY ABOUT US
+            Image.asset(
+              'assets/images/story-about-us.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+
+            // JARAK PENUTUP DI BAWAH
             const SizedBox(height: 30), 
           ],
         ),
@@ -132,14 +133,14 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // Fungsi Helper Tombol yang sudah diperbaiki
+  // Fungsi Helper Tombol
   Widget _buildButton({
     required BuildContext context,
     required String label,
     required IconData icon,
     required Color bgColor,
     required Color textColor,
-    required VoidCallback onPressed, // Tambahkan ini
+    required VoidCallback onPressed,
     bool isOutlined = false,
   }) {
     return SizedBox(
@@ -158,7 +159,7 @@ class HomePage extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 5),
         ),
-        onPressed: onPressed, // Gunakan parameter onPressed
+        onPressed: onPressed,
         icon: Icon(icon, size: 18),
         label: Text(
           label,
