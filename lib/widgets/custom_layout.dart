@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../culture_page.dart';
-import '../geography.dart'; // Import halaman baru
+import '../geography.dart';
+import '../inspiring_figures.dart'; // Import halaman baru
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
@@ -88,6 +89,18 @@ class CustomLayout extends StatelessWidget {
                   _navigateTo(context, const GeographyPage());
                 },
               ),
+
+              // MENU INSPIRING FIGURES
+              ListTile(
+                leading: const Icon(Icons.people, color: navyColor),
+                title: const Text(
+                  'Inspiring Figures',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const InspiringFiguresPage());
+                },
+              ),
             ],
           ),
         ),
@@ -98,7 +111,19 @@ class CustomLayout extends StatelessWidget {
         preferredSize: const Size.fromHeight(80),
         child: SafeArea(
           child: Container(
-            color: themeColor,
+            // --- EDIT DISINI BUAT SHADOW ---
+            decoration: BoxDecoration(
+              color: themeColor, // Warna background AppBar
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.1), // Warna bayangan hitam tipis
+                  spreadRadius: 1, // Seberapa luas bayangan menyebar
+                  blurRadius: 3, // Seberapa blur bayangannya
+                  offset: const Offset(0, 2), // Posisi bayangan (x, y). y=2 berarti bayangan ke bawah
+                ),
+              ],
+            ),
+            // ---------------------------------
             padding: const EdgeInsets.symmetric(horizontal: 15.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

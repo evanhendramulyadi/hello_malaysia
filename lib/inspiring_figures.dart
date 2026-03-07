@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_layout.dart';
 
-class GeographyPage extends StatelessWidget {
-  const GeographyPage({super.key});
+class InspiringFiguresPage extends StatelessWidget {
+  const InspiringFiguresPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // Warna background krem yang konsisten
     const Color kremColor = Color(0xFFF8F0E5);
- 
+
     return CustomLayout(
       body: Container(
         color: kremColor,
@@ -15,68 +16,53 @@ class GeographyPage extends StatelessWidget {
           child: Column(
             children: [
 
-              const SizedBox(height: 17),
+              const SizedBox(height: 20),
 
-              // 1. Natural Geography
+              // 1. FOTO TOKOH (Tun Abdul Razak)
               Image.asset(
-                'assets/images/natural-geography.png',
+                'assets/images/tun-abdul-razak.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 2. Territorial Boundaries
+              // 2. FOTO TOKOH (Chef Wan)
               Image.asset(
-                'assets/images/territorial-boundaries-1.png',
+                'assets/images/chef-wan.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
+              // 3. FOTO TOKOH (Anwar Ibrahim)
               Image.asset(
-                'assets/images/territorial-boundaries-2.png',
+                'assets/images/anwar-ibrahim.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 3. Geographical Location
+              // 4. FOTO TOKOH (Tony Fernandes)
               Image.asset(
-                'assets/images/geographical-location-1.png',
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
-              ),
-              const SizedBox(height: 15),
-
-              Image.asset(
-                'assets/images/geographical-location-2.png',
+                'assets/images/tony-fernandes.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 4. Landforms 1
+              // 5. FOTO TOKOH (Tunku Abdul Rahman)
               Image.asset(
-                'assets/images/landforms-1.png',
+                'assets/images/tunku-abdul-rahman.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 15),
-
-              // 5. Landforms 2
-              Image.asset(
-                'assets/images/landforms-2.png',
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
-              ),
-
-              // Penutup
-              const SizedBox(height: 30),
+              const SizedBox(height: 30), // Pastikan diakhiri koma atau tutup bracket
+              
             ],
           ),
         ),
