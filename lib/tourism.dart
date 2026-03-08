@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_layout.dart';
 
-class InspiringFiguresPage extends StatelessWidget {
-  const InspiringFiguresPage({super.key});
+class TourismPage extends StatelessWidget {
+  const TourismPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Warna background krem yang konsisten
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
@@ -15,54 +14,47 @@ class InspiringFiguresPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-
-              const SizedBox(height: 20),
-
-              // 1. FOTO TOKOH (Tun Abdul Razak)
+              // 1. Gambar Utama Malaysia Gateway
               Image.asset(
-                'assets/images/tun-abdul-razak.png',
+                'assets/images/malaysia-gateway.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 2. FOTO TOKOH (Chef Wan)
               Image.asset(
-                'assets/images/chef-wan.png',
+                'assets/images/destinations-highlights-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 3. FOTO TOKOH (Anwar Ibrahim)
               Image.asset(
-                'assets/images/abdul-muid-latif.png',
+                'assets/images/destinations-highlights-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 4. FOTO TOKOH (Tony Fernandes)
               Image.asset(
-                'assets/images/tony-fernandes.png',
+                'assets/images/itenerary-trip.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
 
-              // 5. FOTO TOKOH (Tunku Abdul Rahman)
               Image.asset(
-                'assets/images/tunku-abdul-rahman.png',
+                'assets/images/in-ex-breakdown-harga.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 30), // Pastikan diakhiri koma atau tutup bracket
-              
+              // Jarak penutup di bawah (bisa lo isi konten lain nanti)
+              const SizedBox(height: 45),
             ],
           ),
         ),

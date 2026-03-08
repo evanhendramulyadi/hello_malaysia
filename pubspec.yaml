@@ -83,10 +83,26 @@ flutter:
     - assets/images/geographical-location-2.png
     - assets/images/tun-abdul-razak.png
     - assets/images/chef-wan.png
-    - assets/images/anwar-ibrahim.png
+    - assets/images/abdul-muid-latif.png
     - assets/images/tony-fernandes.png
     - assets/images/tunku-abdul-rahman.png
-
+    - assets/images/malaysia-gateway.png
+    - assets/images/destinations-highlights-1.png
+    - assets/images/destinations-highlights-2.png
+    - assets/images/itenerary-trip.png
+    - assets/images/in-ex-breakdown-harga.png
+    - assets/images/culinery.png
+    - assets/images/nasi-lemak-1.png
+    - assets/images/nasi-lemak-2.png
+    - assets/images/nasi-lemak-3.png
+    - assets/images/nasi-lemak-4.png
+    - assets/images/satay-ayam-1.png
+    - assets/images/satay-ayam-2.png
+    - assets/images/satay-ayam-3.png
+    - assets/images/satay-ayam-4.png
+    - assets/images/teh-tarik-1.png
+    - assets/images/teh-tarik-2.png
+    - assets/images/teh-tarik-3.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

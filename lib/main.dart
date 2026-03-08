@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_layout.dart';
 import 'culture_page.dart';
+import 'tourism.dart'; // Import halaman tourism
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +54,11 @@ class HomePage extends StatelessWidget {
                         bgColor: navyColor,
                         textColor: kremColor,
                         onPressed: () {
-                          debugPrint("Explore Tourism Clicked");
+                          // NAVIGASI KE TOURISM PAGE
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const TourismPage()),
+                          );
                         },
                       ),
                       const SizedBox(width: 15),

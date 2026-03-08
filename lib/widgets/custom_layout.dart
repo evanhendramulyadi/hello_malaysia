@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import '../culture_page.dart';
 import '../geography.dart';
-import '../inspiring_figures.dart'; // Import halaman baru
+import '../inspiring_figures.dart';
+import '../tourism.dart';
+import '../culinery.dart';
+import '../demography.dart'; // Import halaman baru
+import '../about_us.dart';   // Import halaman baru
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
@@ -22,8 +26,8 @@ class CustomLayout extends StatelessWidget {
     return Scaffold(
       backgroundColor: themeColor,
 
-      // --- DRAWER (MENU NAVIGASI) ---
-      drawer: Drawer(
+      // --- END DRAWER (MENU NAVIGASI DARI KANAN) ---
+      endDrawer: Drawer(
         child: Container(
           color: themeColor,
           child: ListView(
@@ -101,6 +105,54 @@ class CustomLayout extends StatelessWidget {
                   _navigateTo(context, const InspiringFiguresPage());
                 },
               ),
+
+              // MENU TOURISM
+              ListTile(
+                leading: const Icon(Icons.map, color: navyColor),
+                title: const Text(
+                  'Tourism',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const TourismPage());
+                },
+              ),
+
+              // MENU CULINERY
+              ListTile(
+                leading: const Icon(Icons.restaurant, color: navyColor),
+                title: const Text(
+                  'Culinery',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const CulineryPage());
+                },
+              ),
+
+              // MENU DEMOGRAPHY
+              ListTile(
+                leading: const Icon(Icons.groups, color: navyColor),
+                title: const Text(
+                  'Demography',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const DemographyPage());
+                },
+              ),
+
+              // MENU ABOUT US
+              ListTile(
+                leading: const Icon(Icons.info, color: navyColor),
+                title: const Text(
+                  'About Us',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  _navigateTo(context, const AboutUsPage());
+                },
+              ),
             ],
           ),
         ),
@@ -145,7 +197,7 @@ class CustomLayout extends StatelessWidget {
                     constraints: const BoxConstraints(),
                     icon: const Icon(Icons.menu, color: navyColor, size: 35),
                     onPressed: () {
-                      Scaffold.of(context).openDrawer();
+                      Scaffold.of(context).openEndDrawer(); // Buka dari kanan
                     },
                   ),
                 ),
