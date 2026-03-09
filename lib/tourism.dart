@@ -9,6 +9,7 @@ class TourismPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 2, // <--- BIAR NYALA DI DRAWER (Urutan ketiga)
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -40,7 +41,7 @@ class TourismPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(
-                'assets/images/itenerary-trip.png',
+                'assets/images/destinations-highlights-3.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
@@ -48,12 +49,36 @@ class TourismPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(
-                'assets/images/in-ex-breakdown-harga.png',
+                'assets/images/destinations-highlights-4.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-              // Jarak penutup di bawah (bisa lo isi konten lain nanti)
+              const SizedBox(height: 25),
+
+              Image.asset(
+                'assets/images/itenerary-trip-1.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(
+                'assets/images/itenerary-trip-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(
+                'assets/images/breakdown-harga.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              // Jarak penutup di bawah
               const SizedBox(height: 45),
             ],
           ),

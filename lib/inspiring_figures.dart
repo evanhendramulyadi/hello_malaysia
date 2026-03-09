@@ -10,6 +10,7 @@ class InspiringFiguresPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 5, // <--- INI BIAR NYALA DI MENU INSPIRING FIGURES
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -36,7 +37,7 @@ class InspiringFiguresPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              // 3. FOTO TOKOH (Anwar Ibrahim)
+              // 3. FOTO TOKOH (Abdul Muid Latif)
               Image.asset(
                 'assets/images/abdul-muid-latif.png',
                 width: double.infinity,
@@ -61,7 +62,7 @@ class InspiringFiguresPage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 30), // Pastikan diakhiri koma atau tutup bracket
+              const SizedBox(height: 30), 
               
             ],
           ),

@@ -10,6 +10,7 @@ class AboutUsPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 7, // <--- INI BIAR NYALA DI MENU ABOUT US
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(

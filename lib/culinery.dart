@@ -10,12 +10,12 @@ class CulineryPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 4, // <--- INI BIAR NYALA DI MENU KULINER
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
           child: Column(
             children: [
-
               Image.asset(
                 'assets/images/culinery.png',
                 width: double.infinity,
@@ -111,8 +111,7 @@ class CulineryPage extends StatelessWidget {
               ),
 
               const SizedBox(height: 30),
-
-              ],
+            ],
           ),
         ),
       ),

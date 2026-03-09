@@ -9,6 +9,7 @@ class GeographyPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
  
     return CustomLayout(
+      activeIndex: 3, // <--- INI KUNCINYA BIAR NYALA
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(

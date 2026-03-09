@@ -10,6 +10,7 @@ class CulturePage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 1, // <--- INI BIAR NYALA DI DRAWER (Urutan kedua)
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -31,16 +32,24 @@ class CulturePage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 25), // Tadi lo kurang koma di sini
+              const SizedBox(height: 25), 
 
               // 3. TRADITIONAL RELIGIOUS
               Image.asset(
-                'assets/images/traditional-religious.png',
+                'assets/images/traditional-religious-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 30), // Pastikan diakhiri koma atau tutup bracket
+              const SizedBox(height: 15),
+
+              Image.asset(
+                'assets/images/traditional-religious-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 30), 
             ],
           ),
         ),

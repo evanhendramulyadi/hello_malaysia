@@ -10,6 +10,7 @@ class DemographyPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
+      activeIndex: 6, // <--- BIAR NYALA DI MENU DEMOGRAPHY
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
