@@ -103,6 +103,16 @@ flutter:
     - assets/images/teh-tarik-1.png
     - assets/images/teh-tarik-2.png
     - assets/images/teh-tarik-3.png
+    - assets/images/nation-of-diversity.png
+    - assets/images/ethnic-heritage.png
+    - assets/images/religious-nation-1.png
+    - assets/images/religious-nation-2.png
+    - assets/images/voices-nation.png
+    - assets/images/pplg.png
+    - assets/images/accounting.png
+    - assets/images/culinery-student.png
+    - assets/images/dkv.png
+    - assets/images/hospy.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

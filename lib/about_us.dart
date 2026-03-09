@@ -16,7 +16,47 @@ class AboutUsPage extends StatelessWidget {
           child: Column(
             children: [
               
+              const SizedBox(height: 20),
+
+              Image.asset(  
+                'assets/images/pplg.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
               const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/accounting.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/culinery-student.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/dkv.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/hospy.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 30),
 
             ],
           ),
