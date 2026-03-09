@@ -11,32 +11,36 @@ import '../about_us.dart';
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
+  
+  /// Penanda halaman mana yang sedang aktif:
+  /// 0: Home, 1: Culture, 2: Tourism, 3: Geography, 4: Culinery
+  /// 5: Inspiring Figures, 6: Demography, 7: About Us
   final int activeIndex;
 
   const CustomLayout({
-    super.key,
-    required this.body,
+    super.key, 
+    required this.body, 
     this.activeIndex = 0,
   });
 
+  // Method untuk pindah halaman dan menutup drawer secara otomatis
   void _navigateTo(BuildContext context, Widget page) {
     Navigator.pop(context); // Tutup drawer
     Navigator.push(
-      context,
+      context, 
       MaterialPageRoute(builder: (context) => page),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    // Definisi warna sesuai branding
     const Color themeColor = Color(0xFFF8F0E5);
     const Color navyColor = Color(0xFF012B47);
-    const Color activeColor = Colors.blue;
+    const Color activeColor = Colors.blue; 
 
     return Scaffold(
       backgroundColor: themeColor,
-      // Penting: agar body naik ke belakang AppBar yang rounded
-      extendBodyBehindAppBar: true,
 
       // --- DRAWER (MENU SAMPING) ---
       endDrawer: Drawer(
@@ -44,6 +48,7 @@ class CustomLayout extends StatelessWidget {
           color: themeColor,
           child: Column(
             children: [
+              // Header Drawer dengan Logo
               Container(
                 width: double.infinity,
                 height: 220,
@@ -53,12 +58,14 @@ class CustomLayout extends StatelessWidget {
                     width: 150,
                     height: 150,
                     child: Image.asset(
-                      'assets/images/logo-teks-putih.png',
-                      fit: BoxFit.contain,
+                      'assets/images/logo-teks-putih.png', 
+                      fit: BoxFit.contain
                     ),
                   ),
                 ),
               ),
+              
+              // List Menu di Drawer
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.zero,
@@ -140,46 +147,37 @@ class CustomLayout extends StatelessWidget {
       ),
 
       // --- APPBAR (BAGIAN ATAS) ---
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            color: themeColor,
-            borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(25),
-              bottomRight: Radius.circular(25),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(60),
+        child: SafeArea(
+          child: Container(
+            decoration: BoxDecoration(
+              color: themeColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withValues(alpha: 0.1),
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                  offset: const Offset(0, 2),
+                ),
+              ],
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withValues(alpha: 0.1),
-                spreadRadius: 1,
-                blurRadius: 10,
-                offset: const Offset(0, 2),
-              ),
-            ],
-          ),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    'assets/images/logo-tanpa-teks.png',
-                    height: 50,
-                    fit: BoxFit.contain,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  'assets/images/logo-tanpa-teks.png',
+                  height: 70,
+                  fit: BoxFit.contain,
+                ),
+                Builder(
+                  builder: (context) => IconButton(
+                    icon: const Icon(Icons.menu, color: navyColor, size: 35),
+                    onPressed: () => Scaffold.of(context).openEndDrawer(),
                   ),
-                  Builder(
-                    builder: (context) => IconButton(
-                      icon: const Icon(Icons.menu, color: navyColor, size: 35),
-                      onPressed: () => Scaffold.of(context).openEndDrawer(),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -190,13 +188,9 @@ class CustomLayout extends StatelessWidget {
 
       // --- BOTTOM NAVIGATION BAR ---
       bottomNavigationBar: Container(
-        height: 85, // Sedikit lebih tinggi agar nyaman
+        height: 75,
         decoration: BoxDecoration(
           color: themeColor,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(30),
-            topRight: Radius.circular(30),
-          ),
           boxShadow: [
             BoxShadow(
               color: Colors.black.withValues(alpha: 0.1),
@@ -219,11 +213,14 @@ class CustomLayout extends StatelessWidget {
             ),
             _buildBottomItem(
               context: context,
-              icon: Icons.groups, // Pakai icon grup untuk Demography
+              icon: Icons.groups,
               label: "Demography",
               activeColor: activeColor,
               isActive: activeIndex == 6,
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const DemographyPage())),
+              onTap: () => Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const DemographyPage()),
+              ),
             ),
             _buildBottomItem(
               context: context,
@@ -231,7 +228,10 @@ class CustomLayout extends StatelessWidget {
               label: "About Us",
               activeColor: activeColor,
               isActive: activeIndex == 7,
-              onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const AboutUsPage())),
+              onTap: () => Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => const AboutUsPage()),
+              ),
             ),
           ],
         ),
@@ -239,6 +239,7 @@ class CustomLayout extends StatelessWidget {
     );
   }
 
+  // --- WIDGET HELPER UNTUK DRAWER ITEM ---
   Widget _buildDrawerItem({
     required BuildContext context,
     required IconData icon,
@@ -264,6 +265,7 @@ class CustomLayout extends StatelessWidget {
     );
   }
 
+  // --- WIDGET HELPER UNTUK BOTTOM NAV ITEM ---
   Widget _buildBottomItem({
     required BuildContext context,
     required IconData icon,

@@ -17,10 +17,8 @@ class AboutUsPage extends StatelessWidget {
           child: Column(
             children: [
               
-              const SizedBox(height: 20),
-
               Image.asset(  
-                'assets/images/pplg.png',
+                'assets/images/pplg-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
@@ -28,7 +26,7 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(  
-                'assets/images/accounting.png',
+                'assets/images/pplg-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
@@ -36,7 +34,7 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(  
-                'assets/images/culinery-student.png',
+                'assets/images/accounting-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
@@ -44,7 +42,39 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(  
-                'assets/images/dkv.png',
+                'assets/images/accounting-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/culinery-student-1.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/culinery-student-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/dkv-1.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/dkv-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),

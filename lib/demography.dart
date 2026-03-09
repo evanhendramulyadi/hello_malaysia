@@ -57,6 +57,54 @@ class DemographyPage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/value-nation.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/malaysian-map.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/occupations-malaysia-1.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/occupations-malaysia-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/occupations-malaysia-3.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset( 
+                'assets/images/occupations-malaysia-4.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
               const SizedBox(height: 30),
 
             ],

@@ -73,7 +73,7 @@ class TourismPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(
-                'assets/images/breakdown-harga.png',
+                'assets/images/breakdown-price.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
