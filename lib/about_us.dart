@@ -82,7 +82,39 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(  
-                'assets/images/hospy.png',
+                'assets/images/hospy-1.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/hospy-2.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/background.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/goal.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
+              Image.asset(  
+                'assets/images/logo-philosophy.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),

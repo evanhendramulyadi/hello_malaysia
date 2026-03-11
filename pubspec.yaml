@@ -126,7 +126,8 @@ flutter:
     - assets/images/culinery-student-2.png
     - assets/images/dkv-1.png
     - assets/images/dkv-2.png
-    - assets/images/hospy.png
+    - assets/images/hospy-1.png
+    - assets/images/hospy-2.png
     - assets/videos/anwar-ibrahim.mp4
     - assets/images/value-nation.png
     - assets/images/malaysian-map.png
@@ -136,6 +137,9 @@ flutter:
     - assets/images/occupations-malaysia-4.png
     - assets/images/climate-character.png
     - assets/images/qr-code-ebook.jpeg
+    - assets/images/background.png
+    - assets/images/goal.png
+    - assets/images/logo-philosophy.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
