@@ -37,22 +37,34 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showVideoPopup() {
-    showDialog(
+    showGeneralDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
+      barrierLabel: "Video",
+      transitionDuration: const Duration(milliseconds: 600),
+      pageBuilder: (context, anim1, anim2) => const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
+      transitionBuilder: (context, anim1, anim2, child) {
+        return FadeTransition(opacity: anim1, child: child);
+      },
     ).then((_) {
       if (mounted) {
-        _showQRPopup();
+        Future.delayed(const Duration(milliseconds: 100), () {
+          _showQRPopup();
+        });
       }
     });
   }
 
   void _showQRPopup() {
-    showDialog(
+    showGeneralDialog(
       context: context,
       barrierDismissible: false,
-      builder: (context) => const QRPopup(imagePath: 'assets/images/qr-code-ebook.jpeg'),
+      barrierLabel: "QR",
+      transitionDuration: const Duration(milliseconds: 600),
+      pageBuilder: (context, anim1, anim2) => const QRPopup(imagePath: 'assets/images/qr-code-ebook.jpeg'),
+      transitionBuilder: (context, anim1, anim2, child) {
+        return FadeTransition(opacity: anim1, child: child);
+      },
     );
   }
 
@@ -138,6 +150,9 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
+
+// --- WIDGET POPUP VIDEO ---
 class VideoPopup extends StatefulWidget {
   final String videoPath;
   const VideoPopup({super.key, required this.videoPath});
@@ -168,82 +183,98 @@ class _VideoPopupState extends State<VideoPopup> {
 
   @override
   Widget build(BuildContext context) {
-    return AlertDialog(
-      backgroundColor: Colors.black,
-      contentPadding: EdgeInsets.zero,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      insetPadding: const EdgeInsets.symmetric(horizontal: 20),
-      content: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            if (_controller.value.isInitialized)
-              AspectRatio(
-                aspectRatio: _controller.value.aspectRatio,
-                child: VideoPlayer(_controller),
-              )
-            else
-              const SizedBox(height: 200, child: Center(child: CircularProgressIndicator())),
-            Container(
-              color: const Color(0xFFC20707),
-              width: double.infinity,
-              child: TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text(
-                  "CLOSE",
-                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.2),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+    // Membungkus video ke dalam struktur 9:16
+    return _BasePopupStructure(
+      child: _controller.value.isInitialized
+          ? VideoPlayer(_controller)
+          : const Center(child: CircularProgressIndicator(color: Colors.white)),
     );
   }
 }
 
+// --- WIDGET POPUP QR ---
 class QRPopup extends StatelessWidget {
   final String imagePath;
   const QRPopup({super.key, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
+    // Membungkus gambar ke dalam struktur 9:16
+    return _BasePopupStructure(
+      child: Image.asset(
+        imagePath,
+        fit: BoxFit.cover, // Memaksa gambar memenuhi kotak 9:16
+      ),
+    );
+  }
+}
+
+// --- LOGIKA PEMBUNGKUS (UKURAN FIX 9:16) ---
+class _BasePopupStructure extends StatelessWidget {
+  final Widget child;
+  const _BasePopupStructure({required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double screenHeight = MediaQuery.of(context).size.height;
+    
+    // Tentukan LEBAR kotak (70% lebar layar agar ada ruang di pinggir)
+    final double dialogWidth = screenWidth * 0.7; 
+    
+    // RUMUS 9:16 -> Tinggi = (Lebar / 9) * 16
+    final double contentHeight = (dialogWidth / 9) * 16;
+
+    // Proteksi: Jika HP terlalu pendek, kita kecilkan skalanya agar tombol Close tidak hilang
+    double finalWidth = dialogWidth;
+    double finalHeight = contentHeight;
+    
+    if (finalHeight > screenHeight * 0.7) {
+      finalHeight = screenHeight * 0.7;
+      finalWidth = (finalHeight / 16) * 9;
+    }
+
     return AlertDialog(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.transparent, 
       contentPadding: EdgeInsets.zero,
-      // Naikkan horizontal ke 50 atau 60 agar kolom hitamnya "menciut" mengikuti gambar
-      insetPadding: const EdgeInsets.symmetric(horizontal: 55, vertical: 24), 
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-      content: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min, // Memastikan kolom hanya setinggi konten
-          children: [
-            // Gunakan Image secara langsung tanpa AspectRatio atau Padding tambahan
-            // agar kolom hitamnya menempel pas ke pinggiran gambar
-            Image.asset(
-              imagePath,
-              fit: BoxFit.contain,
-            ),
-            // Tombol Close Merah
-            Container(
-              color: const Color(0xFFC20707),
-              width: double.infinity,
-              height: 45,
-              child: TextButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text(
-                  "CLOSE",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+      insetPadding: EdgeInsets.zero,
+      content: Container(
+        width: finalWidth,
+        decoration: BoxDecoration(
+          color: Colors.black,
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(20),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // KOTAK KONTEN 9:16
+              SizedBox(
+                width: finalWidth,
+                height: finalHeight,
+                child: child,
+              ),
+              // TOMBOL CLOSE (TIDAK MASUK HITUNGAN 9:16 BIAR KONTEN TETAP PAS)
+              Container(
+                width: finalWidth,
+                height: 50,
+                color: const Color(0xFFC20707),
+                child: TextButton(
+                  onPressed: () => Navigator.pop(context),
+                  child: const Text(
+                    "CLOSE",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                      fontSize: 16,
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
