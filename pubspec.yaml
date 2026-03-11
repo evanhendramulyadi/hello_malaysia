@@ -97,6 +97,8 @@ flutter:
     - assets/images/destinations-highlights-4.png
     - assets/images/itenerary-trip-1.png
     - assets/images/itenerary-trip-2.png
+    - assets/images/itenerary-trip-3.png
+    - assets/images/itenerary-trip-4.png
     - assets/images/breakdown-price.png
     - assets/images/culinery.png
     - assets/images/nasi-lemak-1.png
@@ -107,6 +109,7 @@ flutter:
     - assets/images/satay-ayam-2.png
     - assets/images/satay-ayam-3.png
     - assets/images/satay-ayam-4.png
+    - assets/images/in-ex.png
     - assets/images/teh-tarik-1.png
     - assets/images/teh-tarik-2.png
     - assets/images/teh-tarik-3.png
@@ -131,6 +134,8 @@ flutter:
     - assets/images/occupations-malaysia-2.png
     - assets/images/occupations-malaysia-3.png
     - assets/images/occupations-malaysia-4.png
+    - assets/images/climate-character.png
+    - assets/images/qr-code-ebook.jpeg
 
   # To add assets to your application, add an assets section, like this:
   # assets:

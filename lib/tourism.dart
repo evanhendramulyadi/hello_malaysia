@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
 import 'widgets/custom_layout.dart';
 
-class TourismPage extends StatelessWidget {
+class TourismPage extends StatefulWidget {
   const TourismPage({super.key});
+
+  @override
+  State<TourismPage> createState() => _TourismPageState();
+}
+
+class _TourismPageState extends State<TourismPage> {
+  // Variabel penanda status dropdown
+  bool isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 2, // <--- BIAR NYALA DI DRAWER (Urutan ketiga)
+      activeIndex: 2,
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -56,22 +64,48 @@ class TourismPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
+              // --- LOGIKA DROUPDOWN ITINERARY ---
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    isExpanded = !isExpanded;
+                  });
+                },
+                child: Image.asset(
+                  isExpanded
+                      ? 'assets/images/itenerary-trip-2.png'
+                      : 'assets/images/itenerary-trip-1.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+
+              // Munculkan trip 3 & 4 jika statusnya expanded
+              if (isExpanded) ...[
+                const SizedBox(height: 25),
+                Image.asset(
+                  'assets/images/itenerary-trip-3.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+                const SizedBox(height: 25),
+                Image.asset(
+                  'assets/images/itenerary-trip-4.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
+              ],
+
+              const SizedBox(height: 25),
+
               Image.asset(
-                'assets/images/itenerary-trip-1.png',
+                'assets/images/in-ex.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 25),
-
-              Image.asset(
-                'assets/images/itenerary-trip-2.png',
-                width: double.infinity,
-                fit: BoxFit.fitWidth,
-              ),
-
-              const SizedBox(height: 25),
-
+              
               Image.asset(
                 'assets/images/breakdown-price.png',
                 width: double.infinity,
@@ -79,7 +113,7 @@ class TourismPage extends StatelessWidget {
               ),
 
               // Jarak penutup di bawah
-              const SizedBox(height: 45),
+              const SizedBox(height: 30),
             ],
           ),
         ),

@@ -41,6 +41,18 @@ class _HomePageState extends State<HomePage> {
       context: context,
       barrierDismissible: false,
       builder: (context) => const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
+    ).then((_) {
+      if (mounted) {
+        _showQRPopup();
+      }
+    });
+  }
+
+  void _showQRPopup() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => const QRPopup(imagePath: 'assets/images/qr-code-ebook.jpeg'),
     );
   }
 
@@ -50,7 +62,7 @@ class _HomePageState extends State<HomePage> {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 0, // <--- INI BIAR ICON HOME NYALA BIRU
+      activeIndex: 0, 
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -180,10 +192,53 @@ class _VideoPopupState extends State<VideoPopup> {
                 onPressed: () => Navigator.pop(context),
                 child: const Text(
                   "CLOSE",
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.2),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class QRPopup extends StatelessWidget {
+  final String imagePath;
+  const QRPopup({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      backgroundColor: Colors.black,
+      contentPadding: EdgeInsets.zero,
+      // Naikkan horizontal ke 50 atau 60 agar kolom hitamnya "menciut" mengikuti gambar
+      insetPadding: const EdgeInsets.symmetric(horizontal: 55, vertical: 24), 
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+      content: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min, // Memastikan kolom hanya setinggi konten
+          children: [
+            // Gunakan Image secara langsung tanpa AspectRatio atau Padding tambahan
+            // agar kolom hitamnya menempel pas ke pinggiran gambar
+            Image.asset(
+              imagePath,
+              fit: BoxFit.contain,
+            ),
+            // Tombol Close Merah
+            Container(
+              color: const Color(0xFFC20707),
+              width: double.infinity,
+              height: 45,
+              child: TextButton(
+                onPressed: () => Navigator.pop(context),
+                child: const Text(
+                  "CLOSE",
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 1.2,
+                    fontSize: 14,
                   ),
                 ),
               ),

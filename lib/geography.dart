@@ -44,6 +44,14 @@ class GeographyPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
+              Image.asset(
+                'assets/images/climate-character.png',
+                width: double.infinity,
+                fit: BoxFit.fitWidth,
+              ),
+
+              const SizedBox(height: 25),
+
               // 3. Geographical Location
               Image.asset(
                 'assets/images/geographical-location-1.png',
