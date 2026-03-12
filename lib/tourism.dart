@@ -88,7 +88,7 @@ class _TourismPageState extends State<TourismPage> {
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
-                const SizedBox(height: 25),
+                const SizedBox(height: 5),
                 Image.asset(
                   'assets/images/itenerary-trip-4.png',
                   width: double.infinity,
