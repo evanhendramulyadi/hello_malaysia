@@ -3,8 +3,15 @@ import 'package:video_player/video_player.dart';
 import 'widgets/custom_layout.dart';
 import 'culture_page.dart';
 import 'tourism.dart';
+import 'package:flutter/services.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
   runApp(const MyApp());
 }
 
