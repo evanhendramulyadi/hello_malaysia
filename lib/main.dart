@@ -44,36 +44,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _showVideoPopup() {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: false,
-      barrierLabel: "Video",
-      transitionDuration: const Duration(milliseconds: 600),
-      pageBuilder: (context, anim1, anim2) => const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
-      transitionBuilder: (context, anim1, anim2, child) {
-        return FadeTransition(opacity: anim1, child: child);
-      },
-    ).then((_) {
-      if (mounted) {
-        Future.delayed(const Duration(milliseconds: 100), () {
-          _showQRPopup();
-        });
-      }
-    });
-  }
-
-  void _showQRPopup() {
-    showGeneralDialog(
-      context: context,
-      barrierDismissible: false,
-      barrierLabel: "QR",
-      transitionDuration: const Duration(milliseconds: 600),
-      pageBuilder: (context, anim1, anim2) => const QRPopup(imagePath: 'assets/images/qr-code-ebook.jpeg'),
-      transitionBuilder: (context, anim1, anim2, child) {
-        return FadeTransition(opacity: anim1, child: child);
-      },
-    );
-  }
+  showGeneralDialog(
+    context: context,
+    barrierDismissible: false,
+    barrierLabel: "Video",
+    transitionDuration: const Duration(milliseconds: 600),
+    pageBuilder: (context, anim1, anim2) =>
+        const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
+    transitionBuilder: (context, anim1, anim2, child) {
+      return FadeTransition(opacity: anim1, child: child);
+    },
+  );
+}
 
   @override
   Widget build(BuildContext context) {
