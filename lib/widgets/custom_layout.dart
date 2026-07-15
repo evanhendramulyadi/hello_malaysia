@@ -25,10 +25,11 @@ class CustomLayout extends StatelessWidget {
 
   // Method untuk pindah halaman dan menutup drawer secara otomatis
   void _navigateTo(BuildContext context, Widget page) {
-    Navigator.pop(context); // Tutup drawer
-    Navigator.push(
-      context, 
-      MaterialPageRoute(builder: (context) => page),
+    Navigator.pop(context);
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (_) => page),
     );
   }
 
@@ -217,10 +218,14 @@ class CustomLayout extends StatelessWidget {
               label: "Demography",
               activeColor: activeColor,
               isActive: activeIndex == 6,
-              onTap: () => Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context) => const DemographyPage()),
-              ),
+              onTap: () {
+                // Bersihkan semua stack hingga tersisa Home, lalu tumpuk Demography tepat di atasnya
+                Navigator.of(context).popUntil((route) => route.isFirst);
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const DemographyPage()),
+                );
+              },
             ),
             _buildBottomItem(
               context: context,
@@ -228,10 +233,14 @@ class CustomLayout extends StatelessWidget {
               label: "About Us",
               activeColor: activeColor,
               isActive: activeIndex == 7,
-              onTap: () => Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context) => const AboutUsPage()),
-              ),
+              onTap: () {
+                // Bersihkan semua stack hingga tersisa Home, lalu tumpuk About Us tepat di atasnya
+                Navigator.of(context).popUntil((route) => route.isFirst);
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const AboutUsPage()),
+                );
+              },
             ),
           ],
         ),
