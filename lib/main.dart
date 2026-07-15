@@ -5,6 +5,10 @@ import 'culture_page.dart';
 import 'tourism.dart';
 import 'package:flutter/services.dart';
 
+// AKAR MASALAH FIX: Tambahkan flag global di sini untuk mencatat apakah popup sudah pernah muncul.
+// Variabel ini ditaruh di luar class agar nilainya tetap bertahan di memori aplikasi selama tidak diclose total.
+bool _hasShownVideoPopup = false;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -39,23 +43,27 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      _showVideoPopup();
+      // CEK STATUS FLAG: Hanya tampilkan jika popup BELUM pernah muncul sebelumnya
+      if (!_hasShownVideoPopup) {
+        _showVideoPopup();
+        _hasShownVideoPopup = true; // Set nilai menjadi true agar tidak muncul lagi
+      }
     });
   }
 
   void _showVideoPopup() {
-  showGeneralDialog(
-    context: context,
-    barrierDismissible: false,
-    barrierLabel: "Video",
-    transitionDuration: const Duration(milliseconds: 600),
-    pageBuilder: (context, anim1, anim2) =>
-        const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
-    transitionBuilder: (context, anim1, anim2, child) {
-      return FadeTransition(opacity: anim1, child: child);
-    },
-  );
-}
+    showGeneralDialog(
+      context: context,
+      barrierDismissible: false,
+      barrierLabel: "Video",
+      transitionDuration: const Duration(milliseconds: 600),
+      pageBuilder: (context, anim1, anim2) =>
+          const VideoPopup(videoPath: 'assets/videos/anwar-ibrahim.mp4'),
+      transitionBuilder: (context, anim1, anim2, child) {
+        return FadeTransition(opacity: anim1, child: child);
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,8 +147,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-
-
 // --- WIDGET POPUP VIDEO ---
 class VideoPopup extends StatefulWidget {
   final String videoPath;
@@ -172,7 +178,6 @@ class _VideoPopupState extends State<VideoPopup> {
 
   @override
   Widget build(BuildContext context) {
-    // Membungkus video ke dalam struktur 9:16
     return _BasePopupStructure(
       child: _controller.value.isInitialized
           ? VideoPlayer(_controller)
@@ -188,11 +193,10 @@ class QRPopup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Membungkus gambar ke dalam struktur 9:16
     return _BasePopupStructure(
       child: Image.asset(
         imagePath,
-        fit: BoxFit.cover, // Memaksa gambar memenuhi kotak 9:16
+        fit: BoxFit.cover,
       ),
     );
   }
@@ -208,13 +212,9 @@ class _BasePopupStructure extends StatelessWidget {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
     
-    // Tentukan LEBAR kotak (70% lebar layar agar ada ruang di pinggir)
     final double dialogWidth = screenWidth * 0.7; 
-    
-    // RUMUS 9:16 -> Tinggi = (Lebar / 9) * 16
     final double contentHeight = (dialogWidth / 9) * 16;
 
-    // Proteksi: Jika HP terlalu pendek, kita kecilkan skalanya agar tombol Close tidak hilang
     double finalWidth = dialogWidth;
     double finalHeight = contentHeight;
     
@@ -238,13 +238,11 @@ class _BasePopupStructure extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              // KOTAK KONTEN 9:16
               SizedBox(
                 width: finalWidth,
                 height: finalHeight,
                 child: child,
               ),
-              // TOMBOL CLOSE (TIDAK MASUK HITUNGAN 9:16 BIAR KONTEN TETAP PAS)
               Container(
                 width: finalWidth,
                 height: 50,
