@@ -6,7 +6,7 @@
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
-This project was initiated as a **Project-Based Learning (PBL)** assignment at **SMK Pariwisata Metland School**, represented by **Kelompok Malaysia**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
+This project was initiated as a **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**, represented by **Kelompok Malaysia**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
 
 ## ✨ Key Features
 
@@ -27,7 +27,7 @@ This project was initiated as a **Project-Based Learning (PBL)** assignment at *
 
 ## 👥 Project Background & Development Team
 
-This application was created as part of a school **Project-Based Learning (PBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
+This application was created as part of a school **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
 
 Within the Malaysia Group, the mobile application was fully designed and built by the **Software Engineering (PPLG) – Mobile App Development Team**:
 
