@@ -6,7 +6,7 @@
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
-This application is part of a collaborative multidisciplinary project by students at **SMK Pariwisata Metland School**, bringing together contributions from fellow Software Engineering (PPLG) peers alongside Visual Communication Design (DKV), Culinary Arts, Hospitality, and Accounting.
+This project was initiated as a **Project-Based Learning (PBL)** assignment at **SMK Pariwisata Metland School**, represented by **Kelompok Malaysia**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
 
 ## ✨ Key Features
 
@@ -25,16 +25,24 @@ This application is part of a collaborative multidisciplinary project by student
 - **flutter_native_splash**: Automated native splash screen generation.
 - **flutter_launcher_icons**: Cross-platform launcher icon configuration.
 
-## 👥 Mobile Development Team (PPLG)
+## 👥 Project Background & Development Team
 
-Developed by the **Mobile Application Team (Software Engineering / PPLG)** at **SMK Pariwisata Metland School**:
+This application was created as part of a school **Project-Based Learning (PBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
 
+Within the Malaysia Group, the mobile application was fully designed and built by the **Software Engineering (PPLG) – Mobile App Development Team**:
+
+### Mobile App Team (PPLG)
 - **Team Leader & Lead Mobile App Developer**: Evan Hendra Mulyadi
 - **Code Development (Team Members)**: Darrel Satya L., Denniz P. H.
 - **UI/UX Design (Team Member)**: Keisha N. A. R.
 
-> **Multidisciplinary Project Collaboration**:  
-> Developed in collaboration with fellow peers from the **Software Engineering (PPLG) – Web Development Division**, as well as cross-major student teams across **Visual Communication Design (DKV)**, **Culinary Arts**, **Hospitality**, and **Accounting** who contributed to branding assets, culinary research, tourism itineraries, and financial estimations.
+### Multidisciplinary Collaboration
+The mobile app was developed in close collaboration with:
+- **PPLG – Web Development Division**: Fellow Software Engineering peers responsible for the web counterpart.
+- **Visual Communication Design (DKV)**: Brand identity, logos, and visual graphic assets.
+- **Culinary Arts (Kuliner)**: Traditional culinary research and dish documentation.
+- **Hospitality (Perhotelan)**: Tourism destination highlights and travel itineraries.
+- **Accounting (Akuntansi)**: Trip pricing breakdowns and budget estimations.
 
 ## 💻 Local Setup Instructions
 
