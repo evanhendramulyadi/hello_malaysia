@@ -6,7 +6,7 @@
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
-This project was initiated as a **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**, represented by **Kelompok Malaysia**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
+This project was initiated as a **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**, represented by **Malaysia Group**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
 
 ## 📱 Android APK Download
 
@@ -32,7 +32,7 @@ Install and experience the application directly on your Android device:
 
 ## 👥 Project Background & Development Team
 
-This application was created as part of a school **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
+This application was created as part of a school **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Malaysia Group** was established, uniting students from several specialized departments.
 
 Within the Malaysia Group, the mobile application was fully designed and built by the **Information Technology – Mobile App Development Team**:
 
@@ -75,6 +75,6 @@ Ensure you have the [Flutter SDK](https://docs.flutter.dev/get-started/install) 
 
 © 2026 Evan Hendra Mulyadi. All Rights Reserved.
 
-The mobile application codebase and technical implementation are an original work by **Evan Hendra Mulyadi** alongside fellow members of **Kelompok Malaysia (Malaysia Group)**, particularly the **Mobile App Development Team**.
+The mobile application codebase and technical implementation are an original work by **Evan Hendra Mulyadi** alongside fellow members of **Malaysia Group**, particularly the **Mobile App Development Team**.
 
 This repository is publicly accessible solely for viewing, studying, and reviewing the source code. Public access does **not** grant permission to copy the entire project, rebrand or rename it, remove attribution, or claim it as your own creation. Re-use or distribution without explicit permission from the author is strictly prohibited.
