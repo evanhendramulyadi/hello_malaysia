@@ -6,6 +6,8 @@
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
+This application is part of a collaborative multidisciplinary project by students at **SMK Pariwisata Metland School**, bringing together contributions across Software Engineering (PPLG), Visual Communication Design (DKV), Culinary Arts, Hospitality, and Accounting.
+
 ## ✨ Key Features
 
 - **Interactive Exploration Hub**: Seamless navigation across Malaysia's key highlights including Culture, Tourism, Geography, Culinary, Inspiring Figures, Demography, and Project Contributors.
@@ -22,6 +24,16 @@ Hello Malaysia is an educational and exploratory mobile application built with F
 - **video_player**: Flutter package enabling seamless video playback.
 - **flutter_native_splash**: Automated native splash screen generation.
 - **flutter_launcher_icons**: Cross-platform launcher icon configuration.
+
+## 👥 Mobile Development Team
+
+Developed by the **Mobile Application Division (Software Engineering / PPLG)** in collaboration with **Visual Communication Design (DKV)** at **SMK Pariwisata Metland School**:
+
+- **Lead Mobile App Developer**: Evan Hendra Mulyadi
+- **Mobile App Developers**: Darrel Satya L., Denniz P. H.
+- **UI/UX Designer (Mobile App)**: Keisha N. A. R.
+
+> Special acknowledgment to the multidisciplinary student teams across **DKV**, **Culinary Arts**, **Hospitality**, and **Accounting** for their collaboration on visual assets, culinary research, tourism itineraries, and financial breakdowns.
 
 ## 💻 Local Setup Instructions
 
@@ -49,6 +61,6 @@ Ensure you have the [Flutter SDK](https://docs.flutter.dev/get-started/install) 
 
 © 2026 Evan Hendra Mulyadi. All Rights Reserved.
 
-This project is an original work created by **Evan Hendra Mulyadi**.
+The mobile application codebase and technical implementation are an original work by **Evan Hendra Mulyadi** and the **Mobile Application Team**.
 
 This repository is publicly accessible solely for viewing, studying, and reviewing the source code. Public access does **not** grant permission to copy the entire project, rebrand or rename it, remove attribution, or claim it as your own creation. Re-use or distribution without explicit permission from the author is strictly prohibited.
