@@ -16,7 +16,6 @@ class InspiringFiguresPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-
               const SizedBox(height: 20),
 
               // 1. FOTO TOKOH (Tun Abdul Razak)
@@ -62,8 +61,7 @@ class InspiringFiguresPage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 30), 
-              
+              const SizedBox(height: 30),
             ],
           ),
         ),

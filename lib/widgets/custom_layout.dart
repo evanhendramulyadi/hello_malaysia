@@ -11,17 +11,13 @@ import '../about_us.dart';
 
 class CustomLayout extends StatelessWidget {
   final Widget body;
-  
+
   /// Penanda halaman mana yang sedang aktif:
   /// 0: Home, 1: Culture, 2: Tourism, 3: Geography, 4: Culinery
   /// 5: Inspiring Figures, 6: Demography, 7: About Us
   final int activeIndex;
 
-  const CustomLayout({
-    super.key, 
-    required this.body, 
-    this.activeIndex = 0,
-  });
+  const CustomLayout({super.key, required this.body, this.activeIndex = 0});
 
   // Method pembantu untuk reset total state navigasi dan kembali ke halaman Home asli
   void _forceGoToHome(BuildContext context) {
@@ -34,10 +30,7 @@ class CustomLayout extends StatelessWidget {
     Navigator.pop(context);
 
     // Gunakan pushReplacement agar memori RAM bersih dan tidak menumpuk di latar belakang
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (_) => page),
-    );
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => page));
   }
 
   @override
@@ -45,11 +38,13 @@ class CustomLayout extends StatelessWidget {
     // Definisi warna sesuai branding
     const Color themeColor = Color(0xFFF8F0E5);
     const Color navyColor = Color(0xFF012B47);
-    const Color activeColor = Colors.blue; 
+    const Color activeColor = Colors.blue;
 
     // BUNGKUS DENGAN POPSCOPE UNTUK RESOLUSI TOMBOL BACK HP
     return PopScope(
-      canPop: activeIndex == 0, // Hanya izinkan keluar aplikasi jika sedang berada di HOME
+      canPop:
+          activeIndex ==
+          0, // Hanya izinkan keluar aplikasi jika sedang berada di HOME
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
 
@@ -77,13 +72,13 @@ class CustomLayout extends StatelessWidget {
                       width: 150,
                       height: 150,
                       child: Image.asset(
-                        'assets/images/logo-teks-putih.png', 
-                        fit: BoxFit.contain
+                        'assets/images/logo-teks-putih.png',
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
                 ),
-                
+
                 // List Menu di Drawer
                 Expanded(
                   child: ListView(
@@ -99,7 +94,7 @@ class CustomLayout extends StatelessWidget {
                         onTap: () {
                           Navigator.pop(context);
                           if (activeIndex == 0) return;
-                          
+
                           _forceGoToHome(context);
                         },
                       ),
@@ -125,7 +120,8 @@ class CustomLayout extends StatelessWidget {
                         title: 'Geography',
                         activeColor: activeColor,
                         isActive: activeIndex == 3,
-                        onTap: () => _navigateTo(context, const GeographyPage()),
+                        onTap: () =>
+                            _navigateTo(context, const GeographyPage()),
                       ),
                       _buildDrawerItem(
                         context: context,
@@ -141,7 +137,8 @@ class CustomLayout extends StatelessWidget {
                         title: 'Inspiring Figures',
                         activeColor: activeColor,
                         isActive: activeIndex == 5,
-                        onTap: () => _navigateTo(context, const InspiringFiguresPage()),
+                        onTap: () =>
+                            _navigateTo(context, const InspiringFiguresPage()),
                       ),
                       _buildDrawerItem(
                         context: context,
@@ -149,7 +146,8 @@ class CustomLayout extends StatelessWidget {
                         title: 'Demography',
                         activeColor: activeColor,
                         isActive: activeIndex == 6,
-                        onTap: () => _navigateTo(context, const DemographyPage()),
+                        onTap: () =>
+                            _navigateTo(context, const DemographyPage()),
                       ),
                       _buildDrawerItem(
                         context: context,
@@ -231,7 +229,9 @@ class CustomLayout extends StatelessWidget {
                 activeColor: activeColor,
                 isActive: activeIndex == 0,
                 onTap: () {
-                  if (activeIndex == 0) return; // Jika sudah di Home, abaikan klik
+                  if (activeIndex == 0) {
+                    return; // Jika sudah di Home, abaikan klik
+                  }
 
                   _forceGoToHome(context);
                 },
@@ -243,12 +243,16 @@ class CustomLayout extends StatelessWidget {
                 activeColor: activeColor,
                 isActive: activeIndex == 6,
                 onTap: () {
-                  if (activeIndex == 6) return; // Cegah reload jika sudah aktif
+                  if (activeIndex == 6) {
+                    return; // Cegah reload jika sudah aktif
+                  }
 
                   // Gunakan pushReplacement agar tumpukan bersih
                   Navigator.pushReplacement(
-                    context, 
-                    MaterialPageRoute(builder: (context) => const DemographyPage()),
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DemographyPage(),
+                    ),
                   );
                 },
               ),
@@ -259,12 +263,16 @@ class CustomLayout extends StatelessWidget {
                 activeColor: activeColor,
                 isActive: activeIndex == 7,
                 onTap: () {
-                  if (activeIndex == 7) return; // Cegah reload jika sudah aktif
+                  if (activeIndex == 7) {
+                    return; // Cegah reload jika sudah aktif
+                  }
 
                   // Gunakan pushReplacement agar tumpukan bersih
                   Navigator.pushReplacement(
-                    context, 
-                    MaterialPageRoute(builder: (context) => const AboutUsPage()),
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const AboutUsPage(),
+                    ),
                   );
                 },
               ),
@@ -317,11 +325,7 @@ class CustomLayout extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            icon,
-            color: isActive ? activeColor : navyColor,
-            size: 28,
-          ),
+          Icon(icon, color: isActive ? activeColor : navyColor, size: 28),
           const SizedBox(height: 4),
           Text(
             label,

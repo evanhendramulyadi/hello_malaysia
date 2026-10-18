@@ -105,7 +105,7 @@ class _TourismPageState extends State<TourismPage> {
               ),
 
               const SizedBox(height: 25),
-              
+
               Image.asset(
                 'assets/images/price-breakdown.png',
                 width: double.infinity,

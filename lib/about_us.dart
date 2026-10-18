@@ -16,8 +16,7 @@ class AboutUsPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              
-              Image.asset(  
+              Image.asset(
                 'assets/images/pplg-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -25,7 +24,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/pplg-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -33,7 +32,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/accounting-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -41,7 +40,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/accounting-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -49,7 +48,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/culinery-student-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -57,7 +56,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/culinery-student-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -65,7 +64,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/dkv-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -73,7 +72,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/dkv-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -81,7 +80,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/hospy-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -89,7 +88,7 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/hospy-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
@@ -97,28 +96,25 @@ class AboutUsPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              Image.asset(  
+              Image.asset(
                 'assets/images/background.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-
-              Image.asset(  
+              Image.asset(
                 'assets/images/goal.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
-
-              Image.asset(  
+              Image.asset(
                 'assets/images/logo-philosophy.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
 
               const SizedBox(height: 30),
-
             ],
           ),
         ),

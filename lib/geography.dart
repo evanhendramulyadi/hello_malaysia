@@ -7,7 +7,7 @@ class GeographyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const Color kremColor = Color(0xFFF8F0E5);
- 
+
     return CustomLayout(
       activeIndex: 3, // <--- INI KUNCINYA BIAR NYALA
       body: Container(
@@ -15,7 +15,6 @@ class GeographyPage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-
               const SizedBox(height: 17),
 
               // 1. Natural Geography

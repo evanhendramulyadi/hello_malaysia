@@ -23,7 +23,7 @@ class CulturePage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 25), 
+              const SizedBox(height: 25),
 
               // 2. TAPESTRY CULTURES
               Image.asset(
@@ -32,7 +32,7 @@ class CulturePage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 25), 
+              const SizedBox(height: 25),
 
               // 3. TRADITIONAL RELIGIOUS
               Image.asset(
@@ -49,7 +49,7 @@ class CulturePage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              const SizedBox(height: 30), 
+              const SizedBox(height: 30),
             ],
           ),
         ),

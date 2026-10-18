@@ -12,9 +12,7 @@ bool _hasShownVideoPopup = false;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-  ]);
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
   runApp(const MyApp());
 }
@@ -46,7 +44,8 @@ class _HomePageState extends State<HomePage> {
       // CEK STATUS FLAG: Hanya tampilkan jika popup BELUM pernah muncul sebelumnya
       if (!_hasShownVideoPopup) {
         _showVideoPopup();
-        _hasShownVideoPopup = true; // Set nilai menjadi true agar tidak muncul lagi
+        _hasShownVideoPopup =
+            true; // Set nilai menjadi true agar tidak muncul lagi
       }
     });
   }
@@ -71,14 +70,18 @@ class _HomePageState extends State<HomePage> {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 0, 
+      activeIndex: 0,
       body: SingleChildScrollView(
         child: Column(
           children: [
             Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Image.asset('assets/images/welcome-screen.png', width: double.infinity, fit: BoxFit.fitWidth),
+                Image.asset(
+                  'assets/images/welcome-screen.png',
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
                 Positioned(
                   bottom: 22,
                   left: 0,
@@ -92,7 +95,12 @@ class _HomePageState extends State<HomePage> {
                         icon: Icons.explore_outlined,
                         bgColor: navyColor,
                         textColor: kremColor,
-                        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const TourismPage())),
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const TourismPage(),
+                          ),
+                        ),
                       ),
                       const SizedBox(width: 15),
                       _buildButton(
@@ -102,7 +110,12 @@ class _HomePageState extends State<HomePage> {
                         bgColor: Colors.transparent,
                         textColor: kremColor,
                         isOutlined: true,
-                        onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const CulturePage())),
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const CulturePage(),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -110,15 +123,43 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const SizedBox(height: 25),
-            Image.asset('assets/images/story-full.png', width: double.infinity, fit: BoxFit.fitWidth),
-            Image.asset('assets/images/culture-malaysia.png', width: double.infinity, fit: BoxFit.fitWidth),
+            Image.asset(
+              'assets/images/story-full.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+            Image.asset(
+              'assets/images/culture-malaysia.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
             const SizedBox(height: 25),
-            Image.asset('assets/images/geo-culiner-1.png', width: double.infinity, fit: BoxFit.fitWidth),
-            Image.asset('assets/images/geo-culiner-2.png', width: double.infinity, fit: BoxFit.fitWidth),
+            Image.asset(
+              'assets/images/geo-culiner-1.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+            Image.asset(
+              'assets/images/geo-culiner-2.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
             const SizedBox(height: 25),
-            Image.asset('assets/images/inspiring-figures.png', width: double.infinity, fit: BoxFit.fitWidth),
-            Image.asset('assets/images/nation-diversity.png', width: double.infinity, fit: BoxFit.fitWidth),
-            Image.asset('assets/images/story-about-us.png', width: double.infinity, fit: BoxFit.fitWidth),
+            Image.asset(
+              'assets/images/inspiring-figures.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+            Image.asset(
+              'assets/images/nation-diversity.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
+            Image.asset(
+              'assets/images/story-about-us.png',
+              width: double.infinity,
+              fit: BoxFit.fitWidth,
+            ),
             const SizedBox(height: 30),
           ],
         ),
@@ -126,7 +167,15 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildButton({required BuildContext context, required String label, required IconData icon, required Color bgColor, required Color textColor, required VoidCallback onPressed, bool isOutlined = false}) {
+  Widget _buildButton({
+    required BuildContext context,
+    required String label,
+    required IconData icon,
+    required Color bgColor,
+    required Color textColor,
+    required VoidCallback onPressed,
+    bool isOutlined = false,
+  }) {
     return SizedBox(
       width: 135,
       height: 38,
@@ -135,13 +184,20 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: bgColor,
           foregroundColor: textColor,
           elevation: isOutlined ? 0 : 5,
-          side: isOutlined ? BorderSide(color: textColor, width: 2) : BorderSide.none,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          side: isOutlined
+              ? BorderSide(color: textColor, width: 2)
+              : BorderSide.none,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
           padding: const EdgeInsets.symmetric(horizontal: 5),
         ),
         onPressed: onPressed,
         icon: Icon(icon, size: 18),
-        label: Text(label, style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+        label: Text(
+          label,
+          style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }
@@ -194,10 +250,7 @@ class QRPopup extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return _BasePopupStructure(
-      child: Image.asset(
-        imagePath,
-        fit: BoxFit.cover,
-      ),
+      child: Image.asset(imagePath, fit: BoxFit.cover),
     );
   }
 }
@@ -211,20 +264,20 @@ class _BasePopupStructure extends StatelessWidget {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
-    
-    final double dialogWidth = screenWidth * 0.7; 
+
+    final double dialogWidth = screenWidth * 0.7;
     final double contentHeight = (dialogWidth / 9) * 16;
 
     double finalWidth = dialogWidth;
     double finalHeight = contentHeight;
-    
+
     if (finalHeight > screenHeight * 0.7) {
       finalHeight = screenHeight * 0.7;
       finalWidth = (finalHeight / 16) * 9;
     }
 
     return AlertDialog(
-      backgroundColor: Colors.transparent, 
+      backgroundColor: Colors.transparent,
       contentPadding: EdgeInsets.zero,
       insetPadding: EdgeInsets.zero,
       content: Container(
@@ -238,11 +291,7 @@ class _BasePopupStructure extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
-                width: finalWidth,
-                height: finalHeight,
-                child: child,
-              ),
+              SizedBox(width: finalWidth, height: finalHeight, child: child),
               Container(
                 width: finalWidth,
                 height: 50,
