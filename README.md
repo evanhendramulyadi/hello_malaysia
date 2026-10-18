@@ -29,11 +29,12 @@ This application is part of a collaborative multidisciplinary project by student
 
 Developed by the **Mobile Application Team (Software Engineering / PPLG)** at **SMK Pariwisata Metland School**:
 
-- **Lead Mobile App Developer**: Evan Hendra Mulyadi
-- **Mobile App Developers**: Darrel Satya L., Denniz P. H.
-- **UI/UX Designer**: Keisha N. A. R.
+- **Team Leader & Lead Mobile App Developer**: Evan Hendra Mulyadi
+- **Code Development (Team Members)**: Darrel Satya L., Denniz P. H.
+- **UI/UX Design (Team Member)**: Keisha N. A. R.
 
-> Developed in collaboration with fellow **PPLG** peers, as well as partner multidisciplinary student teams across **Visual Communication Design (DKV)**, **Culinary Arts**, **Hospitality**, and **Accounting** who contributed to branding assets, culinary research, tourism itineraries, and financial estimations.
+> **Multidisciplinary Project Collaboration**:  
+> Developed in collaboration with fellow peers from the **Software Engineering (PPLG) – Web Development Division**, as well as cross-major student teams across **Visual Communication Design (DKV)**, **Culinary Arts**, **Hospitality**, and **Accounting** who contributed to branding assets, culinary research, tourism itineraries, and financial estimations.
 
 ## 💻 Local Setup Instructions
 
