@@ -34,7 +34,7 @@ Install and experience the application directly on your Android device:
 
 This application was created as part of a school **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
 
-Within the Malaysia Group, the mobile application was fully designed and built by the **Software Engineering (PPLG) – Mobile App Development Team**:
+Within the Malaysia Group, the mobile application was fully designed and built by the **Software Engineering & IT (*Pengembangan Perangkat Lunak dan Gim* / PPLG) – Mobile App Development Team**:
 
 ### Mobile App Team (PPLG)
 - **Team Leader & Lead Mobile App Developer**: Evan Hendra Mulyadi
@@ -43,11 +43,11 @@ Within the Malaysia Group, the mobile application was fully designed and built b
 
 ### Multidisciplinary Collaboration
 The mobile app was developed in close collaboration with:
-- **PPLG – Web Development Division**: Fellow Software Engineering peers responsible for the web counterpart.
-- **Visual Communication Design (DKV)**: Brand identity, logos, and visual graphic assets.
-- **Culinary Arts (Kuliner)**: Traditional culinary research and dish documentation.
-- **Hospitality (Perhotelan)**: Tourism destination highlights and travel itineraries.
-- **Accounting (Akuntansi)**: Trip pricing breakdowns and budget estimations.
+- **Software Engineering & IT (*Pengembangan Perangkat Lunak dan Gim* / PPLG) – Web Division**: Fellow IT peers responsible for the web counterpart.
+- **Visual Communication Design (*Desain Komunikasi Visual* / DKV)**: Brand identity, logos, and visual graphic assets.
+- **Culinary Arts (*Kuliner*)**: Traditional culinary research and dish documentation.
+- **Hospitality (*Perhotelan*)**: Tourism destination highlights and travel itineraries.
+- **Accounting (*Akuntansi*)**: Trip pricing breakdowns and budget estimations.
 
 ## 💻 Local Setup Instructions
 
