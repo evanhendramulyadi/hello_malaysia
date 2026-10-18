@@ -34,17 +34,17 @@ Install and experience the application directly on your Android device:
 
 This application was created as part of a school **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**. For this assignment, a cross-major collaborative group named **Kelompok Malaysia (Malaysia Group)** was established, uniting students from several specialized departments.
 
-Within the Malaysia Group, the mobile application was fully designed and built by the **Software Engineering (PPLG) – Mobile App Development Team**:
+Within the Malaysia Group, the mobile application was fully designed and built by the **Information Technology – Mobile App Development Team**:
 
-### Mobile App Team (PPLG)
+### Mobile App Development Team
 - **Team Leader & Lead Mobile App Developer**: Evan Hendra Mulyadi
 - **Code Development (Team Members)**: Darrel Satya L., Denniz P. H.
-- **UI/UX Design (Team Member)**: Keisha N. A. R.
+- **Mobile UI/UX Design (Team Member)**: Keisha N. A. R.
 
 ### Multidisciplinary Collaboration
 The mobile app was developed in close collaboration with:
-- **Software Engineering (PPLG) – Web Division**: Fellow Software Engineering peers responsible for the web counterpart.
-- **Visual Communication Design (DKV)**: Brand identity, logos, and visual graphic assets.
+- **Information Technology – Web Division**: Fellow IT peers responsible for the web counterpart.
+- **Visual Communication Design**: Brand identity, logos, and visual graphic assets.
 - **Culinary Arts**: Traditional culinary research and dish documentation.
 - **Hospitality**: Tourism destination highlights and travel itineraries.
 - **Accounting**: Trip pricing breakdowns and budget estimations.
