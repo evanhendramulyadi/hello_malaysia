@@ -6,7 +6,7 @@
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
-This application is part of a collaborative multidisciplinary project by students at **SMK Pariwisata Metland School**, bringing together contributions across Software Engineering (PPLG), Visual Communication Design (DKV), Culinary Arts, Hospitality, and Accounting.
+This application is part of a collaborative multidisciplinary project by students at **SMK Pariwisata Metland School**, bringing together contributions from fellow Software Engineering (PPLG) peers alongside Visual Communication Design (DKV), Culinary Arts, Hospitality, and Accounting.
 
 ## ✨ Key Features
 
@@ -25,15 +25,15 @@ This application is part of a collaborative multidisciplinary project by student
 - **flutter_native_splash**: Automated native splash screen generation.
 - **flutter_launcher_icons**: Cross-platform launcher icon configuration.
 
-## 👥 Mobile Development Team
+## 👥 Mobile Development Team (PPLG)
 
-Developed by the **Mobile Application Division (Software Engineering / PPLG)** in collaboration with **Visual Communication Design (DKV)** at **SMK Pariwisata Metland School**:
+Developed by the **Mobile Application Team (Software Engineering / PPLG)** at **SMK Pariwisata Metland School**:
 
 - **Lead Mobile App Developer**: Evan Hendra Mulyadi
 - **Mobile App Developers**: Darrel Satya L., Denniz P. H.
-- **UI/UX Designer (Mobile App)**: Keisha N. A. R.
+- **UI/UX Designer**: Keisha N. A. R.
 
-> Special acknowledgment to the multidisciplinary student teams across **DKV**, **Culinary Arts**, **Hospitality**, and **Accounting** for their collaboration on visual assets, culinary research, tourism itineraries, and financial breakdowns.
+> Developed in collaboration with fellow **PPLG** peers, as well as partner multidisciplinary student teams across **Visual Communication Design (DKV)**, **Culinary Arts**, **Hospitality**, and **Accounting** who contributed to branding assets, culinary research, tourism itineraries, and financial estimations.
 
 ## 💻 Local Setup Instructions
 
