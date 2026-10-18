@@ -8,6 +8,11 @@ Hello Malaysia is an educational and exploratory mobile application built with F
 
 This project was initiated as a **Project-Based Learning (PjBL)** assignment at **SMK Pariwisata Metland School**, represented by **Kelompok Malaysia**—a collaborative multidisciplinary student group bringing together talents across multiple vocational disciplines.
 
+## 📱 Android APK Download
+
+Install and experience the application directly on your Android device:  
+👉 **[Download Hello Malaysia APK (MediaFire)](https://www.mediafire.com/file/t0u1ir2eysyu7dr/Hello_Malaysia.apk/file)**
+
 ## ✨ Key Features
 
 - **Interactive Exploration Hub**: Seamless navigation across Malaysia's key highlights including Culture, Tourism, Geography, Culinary, Inspiring Figures, Demography, and Project Contributors.
