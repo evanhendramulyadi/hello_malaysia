@@ -2,7 +2,7 @@
   <img src="assets/images/logo-tanpa-teks.png" alt="Hello Malaysia Logo" width="120">
 </p>
 
-<h1 align="center">Hello Malaysia</h1>
+<h1 align="left">Hello Malaysia</h1>
 
 Hello Malaysia is an educational and exploratory mobile application built with Flutter, designed to showcase Malaysia's rich culture, renowned tourism destinations, geography, culinary traditions, inspiring figures, and demographic diversity through an intuitive and visual experience.
 
