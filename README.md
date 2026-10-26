@@ -73,7 +73,7 @@ Ensure you have the [Flutter SDK](https://docs.flutter.dev/get-started/install) 
 
 ## 📄 Copyright & Ownership
 
-© 2026 Evan Hendra Mulyadi. All Rights Reserved.
+© 2026–Present Evan Hendra Mulyadi. All Rights Reserved.
 
 The mobile application codebase and technical implementation are an original work by **Evan Hendra Mulyadi** alongside fellow members of **Malaysia Group**, particularly the **Mobile App Development Team**.
 
