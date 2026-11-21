@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/images/logo-tanpa-teks.png" alt="Hello Malaysia Logo" width="120">
+  <img src="assets/images/logo-no-text.png" alt="Hello Malaysia Logo" width="120">
 </p>
 
 <h1 align="left">Hello Malaysia</h1>
@@ -11,7 +11,7 @@ This project was initiated as a **Project-Based Learning (PjBL)** assignment at 
 ## 📱 Android APK Download
 
 Install and experience the application directly on your Android device:  
-👉 **[Download Hello Malaysia APK (MediaFire)](https://www.mediafire.com/file/gnvhf7y29w1bg85/Hello_Malaysia.apk/file)**
+👉 **[Download Hello Malaysia APK (MediaFire)](https://www.mediafire.com/file/vtiz5e5s84szp1m/Hello_Malaysia.apk/file)**
 
 ## ✨ Key Features
 

@@ -66,6 +66,7 @@ class _TourismPageState extends State<TourismPage> {
 
               // --- LOGIKA DROUPDOWN ITINERARY ---
               GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: () {
                   setState(() {
                     isExpanded = !isExpanded;
@@ -73,8 +74,8 @@ class _TourismPageState extends State<TourismPage> {
                 },
                 child: Image.asset(
                   isExpanded
-                      ? 'assets/images/itenerary-trip-2.png'
-                      : 'assets/images/itenerary-trip-1.png',
+                      ? 'assets/images/itinerary-trip-2.png'
+                      : 'assets/images/itinerary-trip-1.png',
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
@@ -84,13 +85,13 @@ class _TourismPageState extends State<TourismPage> {
               if (isExpanded) ...[
                 const SizedBox(height: 25),
                 Image.asset(
-                  'assets/images/itenerary-trip-3.png',
+                  'assets/images/itinerary-trip-3.png',
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),
-                const SizedBox(height: 5),
+                
                 Image.asset(
-                  'assets/images/itenerary-trip-4.png',
+                  'assets/images/itinerary-trip-4.png',
                   width: double.infinity,
                   fit: BoxFit.fitWidth,
                 ),

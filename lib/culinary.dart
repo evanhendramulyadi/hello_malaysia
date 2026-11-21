@@ -17,7 +17,7 @@ class CulineryPage extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/culinery.png',
+                'assets/images/culinary.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),

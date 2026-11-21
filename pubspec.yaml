@@ -63,14 +63,14 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/images/logo-tanpa-teks.png
+    - assets/images/logo-no-text.png
     - assets/images/welcome-screen.png
     - assets/images/splash.png
     - assets/images/story-full.png
     - assets/images/culture-malaysia.png
-    - assets/images/geo-culiner-1.png
-    - assets/images/geo-culiner-2.png
-    - assets/images/logo-teks-putih.png
+    - assets/images/geo-culinary-1.png
+    - assets/images/geo-culinary-2.png
+    - assets/images/logo-white-text.png
     - assets/images/culture.png
     - assets/images/tapestry-cultures.png
     - assets/images/traditional-religious-1.png
@@ -95,12 +95,12 @@ flutter:
     - assets/images/destinations-highlights-2.png
     - assets/images/destinations-highlights-3.png
     - assets/images/destinations-highlights-4.png
-    - assets/images/itenerary-trip-1.png
-    - assets/images/itenerary-trip-2.png
-    - assets/images/itenerary-trip-3.png
-    - assets/images/itenerary-trip-4.png
+    - assets/images/itinerary-trip-1.png
+    - assets/images/itinerary-trip-2.png
+    - assets/images/itinerary-trip-3.png
+    - assets/images/itinerary-trip-4.png
     - assets/images/price-breakdown.png
-    - assets/images/culinery.png
+    - assets/images/culinary.png
     - assets/images/nasi-lemak-1.png
     - assets/images/nasi-lemak-2.png
     - assets/images/nasi-lemak-3.png
@@ -122,8 +122,8 @@ flutter:
     - assets/images/pplg-2.png
     - assets/images/accounting-1.png
     - assets/images/accounting-2.png
-    - assets/images/culinery-student-1.png
-    - assets/images/culinery-student-2.png
+    - assets/images/culinary-student-1.png
+    - assets/images/culinary-student-2.png
     - assets/images/dkv-1.png
     - assets/images/dkv-2.png
     - assets/images/hospy-1.png
@@ -175,10 +175,10 @@ flutter_launcher_icons:
   android: true
   ios: true
 
-  image_path: "assets/images/logo-tanpa-teks.png"
+  image_path: "assets/images/logo-no-text.png"
 
   adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: "assets/images/logo-tanpa-teks.png"
+  adaptive_icon_foreground: "assets/images/logo-no-text.png"
   
 flutter_native_splash:
   color: "#D2B48C"   # warna krem

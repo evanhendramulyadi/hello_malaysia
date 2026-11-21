@@ -135,12 +135,12 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 25),
             Image.asset(
-              'assets/images/geo-culiner-1.png',
+              'assets/images/geo-culinary-1.png',
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),
             Image.asset(
-              'assets/images/geo-culiner-2.png',
+              'assets/images/geo-culinary-2.png',
               width: double.infinity,
               fit: BoxFit.fitWidth,
             ),

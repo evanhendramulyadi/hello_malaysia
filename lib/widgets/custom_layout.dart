@@ -5,7 +5,7 @@ import '../culture_page.dart';
 import '../geography.dart';
 import '../inspiring_figures.dart';
 import '../tourism.dart';
-import '../culinery.dart';
+import '../culinary.dart';
 import '../demography.dart';
 import '../about_us.dart';
 
@@ -72,7 +72,7 @@ class CustomLayout extends StatelessWidget {
                       width: 150,
                       height: 150,
                       child: Image.asset(
-                        'assets/images/logo-teks-putih.png',
+                        'assets/images/logo-white-text.png',
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -126,7 +126,7 @@ class CustomLayout extends StatelessWidget {
                       _buildDrawerItem(
                         context: context,
                         icon: Icons.restaurant,
-                        title: 'Culinery',
+                        title: 'Culinary',
                         activeColor: activeColor,
                         isActive: activeIndex == 4,
                         onTap: () => _navigateTo(context, const CulineryPage()),
@@ -186,7 +186,7 @@ class CustomLayout extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Image.asset(
-                    'assets/images/logo-tanpa-teks.png',
+                    'assets/images/logo-no-text.png',
                     height: 70,
                     fit: BoxFit.contain,
                   ),

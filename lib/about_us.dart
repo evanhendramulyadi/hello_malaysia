@@ -49,7 +49,7 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(
-                'assets/images/culinery-student-1.png',
+                'assets/images/culinary-student-1.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
@@ -57,7 +57,7 @@ class AboutUsPage extends StatelessWidget {
               const SizedBox(height: 25),
 
               Image.asset(
-                'assets/images/culinery-student-2.png',
+                'assets/images/culinary-student-2.png',
                 width: double.infinity,
                 fit: BoxFit.fitWidth,
               ),
