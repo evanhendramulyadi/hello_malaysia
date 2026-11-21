@@ -73,8 +73,8 @@ Ensure you have the [Flutter SDK](https://docs.flutter.dev/get-started/install) 
 
 ## 📄 Copyright & Ownership
 
-© 2026–Present Evan Hendra Mulyadi. All Rights Reserved.
+© 2026–Present Malaysia Group. All Rights Reserved.
 
-The mobile application codebase and technical implementation are an original work by **Evan Hendra Mulyadi** alongside fellow members of **Malaysia Group**, particularly the **Mobile App Development Team**.
+The mobile application codebase and technical implementation were developed by the **Malaysia Group**, particularly the **Information Technology – Mobile App Development Team**, as part of the Project-Based Learning (PjBL) program at SMK Pariwisata Metland School.
 
 This repository is publicly accessible solely for viewing, studying, and reviewing the source code. Public access does **not** grant permission to copy the entire project, rebrand or rename it, remove attribution, or claim it as your own creation. Re-use or distribution without explicit permission from the author is strictly prohibited.
