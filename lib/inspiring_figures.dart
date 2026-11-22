@@ -6,11 +6,11 @@ class InspiringFiguresPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Warna background krem yang konsisten
+    // Consistent cream background color
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 5, // <--- INI BIAR NYALA DI MENU INSPIRING FIGURES
+      activeIndex: 5, // <--- Highlight the Inspiring Figures menu item
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -18,7 +18,7 @@ class InspiringFiguresPage extends StatelessWidget {
             children: [
               const SizedBox(height: 20),
 
-              // 1. FOTO TOKOH (Tun Abdul Razak)
+              // 1. FIGURE PHOTO (Tun Abdul Razak)
               Image.asset(
                 'assets/images/tun-abdul-razak.png',
                 width: double.infinity,
@@ -27,7 +27,7 @@ class InspiringFiguresPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              // 2. FOTO TOKOH (Chef Wan)
+              // 2. FIGURE PHOTO (Chef Wan)
               Image.asset(
                 'assets/images/chef-wan.png',
                 width: double.infinity,
@@ -36,7 +36,7 @@ class InspiringFiguresPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              // 3. FOTO TOKOH (Abdul Muid Latif)
+              // 3. FIGURE PHOTO (Abdul Muid Latif)
               Image.asset(
                 'assets/images/abdul-muid-latif.png',
                 width: double.infinity,
@@ -45,7 +45,7 @@ class InspiringFiguresPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              // 4. FOTO TOKOH (Tony Fernandes)
+              // 4. FIGURE PHOTO (Tony Fernandes)
               Image.asset(
                 'assets/images/tony-fernandes.png',
                 width: double.infinity,
@@ -54,7 +54,7 @@ class InspiringFiguresPage extends StatelessWidget {
 
               const SizedBox(height: 25),
 
-              // 5. FOTO TOKOH (Tunku Abdul Rahman)
+              // 5. FIGURE PHOTO (Tunku Abdul Rahman)
               Image.asset(
                 'assets/images/tunku-abdul-rahman.png',
                 width: double.infinity,

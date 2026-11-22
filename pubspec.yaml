@@ -181,7 +181,7 @@ flutter_launcher_icons:
   adaptive_icon_foreground: "assets/images/logo-no-text.png"
   
 flutter_native_splash:
-  color: "#D2B48C"   # warna krem
+  color: "#D2B48C"   # cream color
   image: assets/images/splash.png
 
   android: true

@@ -9,7 +9,7 @@ class TourismPage extends StatefulWidget {
 }
 
 class _TourismPageState extends State<TourismPage> {
-  // Variabel penanda status dropdown
+  // Variable indicating dropdown state
   bool isExpanded = false;
 
   @override
@@ -23,7 +23,7 @@ class _TourismPageState extends State<TourismPage> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // 1. Gambar Utama Malaysia Gateway
+              // 1. Malaysia Gateway Main Image
               Image.asset(
                 'assets/images/malaysia-gateway.png',
                 width: double.infinity,
@@ -64,7 +64,7 @@ class _TourismPageState extends State<TourismPage> {
 
               const SizedBox(height: 25),
 
-              // --- LOGIKA DROUPDOWN ITINERARY ---
+              // --- ITINERARY DROPDOWN LOGIC ---
               GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onTap: () {
@@ -81,7 +81,7 @@ class _TourismPageState extends State<TourismPage> {
                 ),
               ),
 
-              // Munculkan trip 3 & 4 jika statusnya expanded
+              // Display trip 3 & 4 if status is expanded
               if (isExpanded) ...[
                 const SizedBox(height: 25),
                 Image.asset(
@@ -113,7 +113,7 @@ class _TourismPageState extends State<TourismPage> {
                 fit: BoxFit.fitWidth,
               ),
 
-              // Jarak penutup di bawah
+              // Bottom closing spacing
               const SizedBox(height: 30),
             ],
           ),

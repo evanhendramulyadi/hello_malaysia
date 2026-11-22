@@ -6,11 +6,11 @@ class AboutUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Warna background yang konsisten
+    // Consistent background color
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 7, // <--- INI BIAR NYALA DI MENU ABOUT US
+      activeIndex: 7, // <--- Highlight the About Us menu item
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(

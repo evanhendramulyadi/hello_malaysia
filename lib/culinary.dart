@@ -6,11 +6,11 @@ class CulineryPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Warna background krem yang konsisten
+    // Consistent cream background color
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 4, // <--- INI BIAR NYALA DI MENU KULINER
+      activeIndex: 4, // <--- Highlight the Culinary menu item
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(

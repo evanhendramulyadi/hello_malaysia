@@ -9,7 +9,7 @@ class GeographyPage extends StatelessWidget {
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 3, // <--- INI KUNCINYA BIAR NYALA
+      activeIndex: 3, // <--- Key to highlight active item
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
@@ -83,7 +83,7 @@ class GeographyPage extends StatelessWidget {
                 fit: BoxFit.fitWidth,
               ),
 
-              // Penutup
+              // Bottom spacing
               const SizedBox(height: 30),
             ],
           ),

@@ -5,8 +5,8 @@ import 'culture_page.dart';
 import 'tourism.dart';
 import 'package:flutter/services.dart';
 
-// AKAR MASALAH FIX: Tambahkan flag global di sini untuk mencatat apakah popup sudah pernah muncul.
-// Variabel ini ditaruh di luar class agar nilainya tetap bertahan di memori aplikasi selama tidak diclose total.
+// ROOT CAUSE FIX: Add a global flag here to track whether the popup has already been shown.
+// This variable is placed outside the class so its value persists in application memory as long as it is not fully closed.
 bool _hasShownVideoPopup = false;
 
 void main() async {
@@ -41,11 +41,11 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      // CEK STATUS FLAG: Hanya tampilkan jika popup BELUM pernah muncul sebelumnya
+      // CHECK STATUS FLAG: Only display if popup has NOT been shown before
       if (!_hasShownVideoPopup) {
         _showVideoPopup();
         _hasShownVideoPopup =
-            true; // Set nilai menjadi true agar tidak muncul lagi
+            true; // Set value to true so it does not appear again
       }
     });
   }
@@ -203,7 +203,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// --- WIDGET POPUP VIDEO ---
+// --- VIDEO POPUP WIDGET ---
 class VideoPopup extends StatefulWidget {
   final String videoPath;
   const VideoPopup({super.key, required this.videoPath});
@@ -242,7 +242,7 @@ class _VideoPopupState extends State<VideoPopup> {
   }
 }
 
-// --- WIDGET POPUP QR ---
+// --- QR POPUP WIDGET ---
 class QRPopup extends StatelessWidget {
   final String imagePath;
   const QRPopup({super.key, required this.imagePath});
@@ -255,7 +255,7 @@ class QRPopup extends StatelessWidget {
   }
 }
 
-// --- LOGIKA PEMBUNGKUS (UKURAN FIX 9:16) ---
+// --- WRAPPER LOGIC (FIXED 9:16 ASPECT RATIO) ---
 class _BasePopupStructure extends StatelessWidget {
   final Widget child;
   const _BasePopupStructure({required this.child});

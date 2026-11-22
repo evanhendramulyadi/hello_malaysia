@@ -6,11 +6,11 @@ class DemographyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Warna background yang konsisten
+    // Consistent background color
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 6, // <--- BIAR NYALA DI MENU DEMOGRAPHY
+      activeIndex: 6, // <--- Highlight the Demography menu item
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(

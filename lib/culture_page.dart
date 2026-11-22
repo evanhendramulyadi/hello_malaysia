@@ -6,17 +6,17 @@ class CulturePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Warna background yang konsisten
+    // Consistent background color
     const Color kremColor = Color(0xFFF8F0E5);
 
     return CustomLayout(
-      activeIndex: 1, // <--- INI BIAR NYALA DI DRAWER (Urutan kedua)
+      activeIndex: 1, // <--- Highlight in drawer (second item)
       body: Container(
         color: kremColor,
         child: SingleChildScrollView(
           child: Column(
             children: [
-              // 1. BANNER WELCOME
+              // 1. WELCOME BANNER
               Image.asset(
                 'assets/images/culture.png',
                 width: double.infinity,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Import semua halaman agar Navigator bisa mengenali tujuannya
+// Import all pages so Navigator recognizes navigation targets
 import '../culture_page.dart';
 import '../geography.dart';
 import '../inspiring_figures.dart';
@@ -12,43 +12,43 @@ import '../about_us.dart';
 class CustomLayout extends StatelessWidget {
   final Widget body;
 
-  /// Penanda halaman mana yang sedang aktif:
-  /// 0: Home, 1: Culture, 2: Tourism, 3: Geography, 4: Culinery
+  /// Indicator of currently active page:
+  /// 0: Home, 1: Culture, 2: Tourism, 3: Geography, 4: Culinary
   /// 5: Inspiring Figures, 6: Demography, 7: About Us
   final int activeIndex;
 
   const CustomLayout({super.key, required this.body, this.activeIndex = 0});
 
-  // Method pembantu untuk reset total state navigasi dan kembali ke halaman Home asli
+  // Helper method to completely reset navigation state and return to initial Home page
   void _forceGoToHome(BuildContext context) {
-    // Menghapus semua sisa memori rute lama dan meluncurkan root '/' (Home) kembali dengan bersih
+    // Clear all existing route history and cleanly launch root '/' (Home)
     Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
   }
 
-  // Method untuk pindah halaman dari Drawer dan menutup drawer secara otomatis
+  // Method to navigate to a page from Drawer and automatically close drawer
   void _navigateTo(BuildContext context, Widget page) {
     Navigator.pop(context);
 
-    // Gunakan pushReplacement agar memori RAM bersih dan tidak menumpuk di latar belakang
+    // Use pushReplacement to keep RAM clean and prevent stacking in the background
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => page));
   }
 
   @override
   Widget build(BuildContext context) {
-    // Definisi warna sesuai branding
+    // Define branding colors
     const Color themeColor = Color(0xFFF8F0E5);
     const Color navyColor = Color(0xFF012B47);
     const Color activeColor = Colors.blue;
 
-    // BUNGKUS DENGAN POPSCOPE UNTUK RESOLUSI TOMBOL BACK HP
+    // WRAP WITH POPSCOPE TO RESOLVE DEVICE BACK BUTTON BEHAVIOR
     return PopScope(
       canPop:
           activeIndex ==
-          0, // Hanya izinkan keluar aplikasi jika sedang berada di HOME
+          0, // Only allow exiting the app if currently on HOME
       onPopInvokedWithResult: (didPop, result) {
         if (didPop) return;
 
-        // JIKA DI HALAMAN LAIN, SAAT BACK DITEKAN: Paksa balik ke Home tanpa menutup aplikasi
+        // IF ON ANOTHER PAGE, WHEN BACK IS PRESSED: Force return to Home without closing the app
         if (activeIndex != 0) {
           _forceGoToHome(context);
         }
@@ -56,13 +56,13 @@ class CustomLayout extends StatelessWidget {
       child: Scaffold(
         backgroundColor: themeColor,
 
-        // --- DRAWER (MENU SAMPING) ---
+        // --- DRAWER (SIDE MENU) ---
         endDrawer: Drawer(
           child: Container(
             color: themeColor,
             child: Column(
               children: [
-                // Header Drawer dengan Logo
+                // Drawer Header with Logo
                 Container(
                   width: double.infinity,
                   height: 220,
@@ -79,7 +79,7 @@ class CustomLayout extends StatelessWidget {
                   ),
                 ),
 
-                // List Menu di Drawer
+                // Menu List in Drawer
                 Expanded(
                   child: ListView(
                     padding: EdgeInsets.zero,
@@ -165,7 +165,7 @@ class CustomLayout extends StatelessWidget {
           ),
         ),
 
-        // --- APPBAR (BAGIAN ATAS) ---
+        // --- APPBAR (TOP BAR) ---
         appBar: PreferredSize(
           preferredSize: const Size.fromHeight(60),
           child: SafeArea(
@@ -202,7 +202,7 @@ class CustomLayout extends StatelessWidget {
           ),
         ),
 
-        // --- ISI HALAMAN ---
+        // --- PAGE CONTENT ---
         body: body,
 
         // --- BOTTOM NAVIGATION BAR ---
@@ -230,7 +230,7 @@ class CustomLayout extends StatelessWidget {
                 isActive: activeIndex == 0,
                 onTap: () {
                   if (activeIndex == 0) {
-                    return; // Jika sudah di Home, abaikan klik
+                    return; // If already on Home, ignore click
                   }
 
                   _forceGoToHome(context);
@@ -244,10 +244,10 @@ class CustomLayout extends StatelessWidget {
                 isActive: activeIndex == 6,
                 onTap: () {
                   if (activeIndex == 6) {
-                    return; // Cegah reload jika sudah aktif
+                    return; // Prevent reload if already active
                   }
 
-                  // Gunakan pushReplacement agar tumpukan bersih
+                  // Use pushReplacement to keep navigation stack clean
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -264,10 +264,10 @@ class CustomLayout extends StatelessWidget {
                 isActive: activeIndex == 7,
                 onTap: () {
                   if (activeIndex == 7) {
-                    return; // Cegah reload jika sudah aktif
+                    return; // Prevent reload if already active
                   }
 
-                  // Gunakan pushReplacement agar tumpukan bersih
+                  // Use pushReplacement to keep navigation stack clean
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
@@ -283,7 +283,7 @@ class CustomLayout extends StatelessWidget {
     );
   }
 
-  // --- WIDGET HELPER UNTUK DRAWER ITEM ---
+  // --- HELPER WIDGET FOR DRAWER ITEM ---
   Widget _buildDrawerItem({
     required BuildContext context,
     required IconData icon,
@@ -309,7 +309,7 @@ class CustomLayout extends StatelessWidget {
     );
   }
 
-  // --- WIDGET HELPER UNTUK BOTTOM NAV ITEM ---
+  // --- HELPER WIDGET FOR BOTTOM NAV ITEM ---
   Widget _buildBottomItem({
     required BuildContext context,
     required IconData icon,
